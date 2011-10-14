@@ -63,6 +63,7 @@
 %\setlength{\columnsep}{2pt}
 % (end)
 
+% (fold) Probability
 \section{Probability}
 \begin{math}
   P(A|B) = \frac{P(A \cap B)}{P(B)}
@@ -73,7 +74,8 @@
 \begin{math}
   \text{Bayes: } P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 \end{math} \\[2pt]
-
+% (end)
+% (fold) Random Variables
 \section{Random Variables}
 \begin{math}
   f(x) = P(X = x), F(x) = P(X \leq x)
@@ -81,6 +83,8 @@
 \begin{math}
   \sum_{x \in \Omega}{f(x)} = 1
 \end{math}
+
+% (fold) Variability
 \subsection{Variability}
 \begin{math}
   \expect{h(X)} = \sum_{all \, x} h(x) f(x)
@@ -103,12 +107,14 @@
 \begin{math}
   E \left[ \frac{X - \mu}{\sigma} \right] = 0, Var \left( \frac{X - \mu}{\sigma} \right) = 1
 \end{math}
-
+% (end)
+% (fold) Discrete Random Variables
 \subsection{Discrete Random Variables}
 \begin{math}
   f(x) = F(x) - F(x - 1)
 \end{math}
-
+% (end)
+% (fold) Continuous Random Variables
 \subsection{Continuous Random Variables}
 \begin{math}
   P[X = a] = P[X = b] = 0 
@@ -118,7 +124,8 @@
 \begin{math}
   f(x) = F'(x)
 \end{math}
-
+% (end)
+% (fold) Multivariate Random Variables
 \subsection{Multivariate Random Variables}
 \begin{math}
   f_{XY}(x, y) = P[X = x \text{ and } Y = y]
@@ -150,7 +157,8 @@
 \begin{math}
   X = Y \Rightarrow Corr(X, Y) = 1
 \end{math}
-
+% (end)
+% (fold) Independent Random Variables
 \subsection{Independent Random Variables}
 \begin{math}
   \expect{XY} = \expect{X} \cdot \expect{Y}
@@ -161,6 +169,8 @@
 \begin{math}
   Cov(X, Y) = 0
 \end{math}
+% (end)
+% (end)
 
 \section{Distributions}
 
