@@ -101,14 +101,6 @@
   E \left[ \frac{X - \mu}{\sigma} \right] = 0, Var \left( \frac{X - \mu}{\sigma} \right) = 1
 \end{math}
 
-\subsection{Independent Random Variables}
-\begin{math}
-  \expect{XY} = \expect{X} \cdot \expect{Y}
-\end{math} \\[2pt]
-\begin{math}
-  Var(X + Y) = Var(X) + Var(Y)
-\end{math}
-
 \subsection{Discrete Random Variables}
 \begin{math}
   f(x) = F(x) - F(x - 1)
@@ -125,12 +117,45 @@
 \end{math}
 
 \subsection{Multivariate Random Variables}
+\begin{math}
+  f_{XY}(x, y) = P[X = x \text{ and } Y = y]
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, Y) = \sigma_{XY} = \expect{(X - \expect{X}) \cdot (Y - \expect{Y})} = \expect{XY} - \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, a) = 0, Cov(X, X) = Var(x)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, Y) = Cov(Y, X)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(aX, bY) = abCov(X, Y)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X + a, Y + b) = Cov(X + a, Y + a)
+\end{math} \\[2pt]
+\begin{math}
+  Corr(X, Y) = \varphi_{XY} = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y)}}
+\end{math}
+\begin{math}
+  X = Y \Rightarrow Corr(X, Y) = 1
+\end{math}
+
+\subsection{Independent Random Variables}
+\begin{math}
+  \expect{XY} = \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Var(X + Y) = Var(X) + Var(Y)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, Y) = 0
+\end{math}
 
 \section{Distributions}
-Text 3
 
-\section{Section 4}
-Text 3
+\section{Theorem of HAX}
 
 \newpage
 
