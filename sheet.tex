@@ -1,0 +1,82 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{mathtools}  
+\usepackage{multicol}
+
+\pdfinfo{
+  /Title (sheet.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Daniel Oom)
+  /Subject (Mathmatical Statistics)
+  /Keywords (math, statistics, cheat sheet)}
+
+\mathtoolsset{showonlyrefs}
+
+\geometry{top=1.5cm,left=0.5cm,right=0.5cm,bottom=0.5cm}
+
+% Header
+\pagestyle{fancy}
+\lhead{Daniel Oom}
+\rhead{Fork me on github}
+\setlength{\headsep}{10pt}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+                                {-1ex plus -.5ex minus -.2ex}
+                                {0.5ex plus .2ex}
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
+                                {-1explus -.5ex minus -.2ex}
+                                {0.5ex plus .2ex}
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}
+                                {-1ex plus -.5ex minus -.2ex}
+                                {1ex plus .2ex}
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{4}
+
+% multicol parameters
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{Probability}
+\begin{math}
+  P(A|B) = \frac{P(A \cap B)}{P(B)}
+\end{math} \\
+\begin{math}
+  \text{A, B independent if } P(A \cap B) = P(A) \cdot P(B)
+\end{math} \\
+
+\section{Section 2}
+Text 2
+
+\section{Section 3}
+Text 3
+
+\section{Section 4}
+Text 3
+
+\end{multicols}
+\end{document}
