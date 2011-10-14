@@ -7,6 +7,8 @@
 \usepackage{mathtools}  
 \usepackage{multicol}
 
+\newcommand{\expect}[1]{\mathrm{E} \left[ {#1} \right]}
+
 \pdfinfo{
   /Title (sheet.pdf)
   /Creator (TeX)
@@ -55,35 +57,84 @@
 \begin{multicols}{4}
 
 % multicol parameters
-%\setlength{\columnseprule}{0.25pt}
-\setlength{\premulticols}{1pt}
-\setlength{\postmulticols}{1pt}
-\setlength{\multicolsep}{1pt}
-\setlength{\columnsep}{2pt}
+\setlength{\columnseprule}{0.25pt}
+%\setlength{\premulticols}{1pt}
+%\setlength{\postmulticols}{1pt}
+%\setlength{\multicolsep}{1pt}
+%\setlength{\columnsep}{2pt}
 
 \section{Probability}
 \begin{math}
   P(A|B) = \frac{P(A \cap B)}{P(B)}
-\end{math} \\
+\end{math}
 \begin{math}
   \text{A, B independent if } P(A \cap B) = P(A) \cdot P(B)
 \end{math}
 
 \section{Random Variables}
 \begin{math}
-  f(x) = P(X = x)
-\end{math} \\
+  f(x) = P(X = x), F(x) = P(X \leq x)
+\end{math}
 \begin{math}
-  F(x) = P(X \leq x)
-\end{math} \\
+  \sum_{x \in \Omega}{f(x)} = 1
+\end{math}
+\subsection{Variability}
 \begin{math}
-  F(x) = \sum_{all \ x} f(x)
-\end{math} \\
-\section{Section 3}
+  \expect{h(X)} = \sum_{all \, x} h(x) f(x)
+\end{math} \\[2pt]
+\begin{math}
+  Var(X) = \sum_{all \, x} f(x) (x - \mu)^2
+\end{math} \\[2pt]
+\begin{math}
+  \expect{a} = a, \expect{aX} = a\expect{X}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X + Y} = \expect{X} + \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Var(X) = \expect{X^2} - (\expect{X})^2 
+\end{math} \\[2pt]
+\begin{math}
+  Var(a) = 0, Var(aX) = a^2 Var(X) 
+\end{math} \\[2pt]
+\begin{math}
+  E \left[ \frac{X - \mu}{\sigma} \right] = 0, Var \left( \frac{X - \mu}{\sigma} \right) = 1
+\end{math}
+
+\subsection{Independent Random Variables}
+\begin{math}
+  \expect{XY} = \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Var(X + Y) = Var(X) + Var(Y)
+\end{math}
+
+\subsection{Discrete Random Variables}
+\begin{math}
+  f(x) = F(x) - F(x - 1)
+\end{math}
+
+\subsection{Continuous Random Variables}
+\begin{math}
+  P[X = a] = P[X = b] = 0 
+  \Rightarrow
+  P[a \leq X \leq b] = P[a < X < b]
+\end{math} \\[2pt]
+\begin{math}
+  f(x) = F'(x)
+\end{math}
+
+\subsection{Multivariate Random Variables}
+
+\section{Distributions}
 Text 3
 
 \section{Section 4}
 Text 3
+
+\newpage
+
+\section{Section 5}
 
 \end{multicols}
 \end{document}
