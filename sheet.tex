@@ -303,6 +303,21 @@
   \text{State absorbing if }
   p_{ii} = 1 \text{ and } p_{ij} = 0 \text{ for } i \neq j
 \end{math} \\[2pt]
+\begin{math}
+  \text{Probability} = q_j =
+  \begin{cases}
+    1                       & j = a \\
+    0                       & j \neq a \\
+    \sum_k P_{jk} \cdot q_k & \text{otherwise} \\
+  \end{cases}
+\end{math}
+\begin{math}
+  \text{Steps} = m_j =
+  \begin{cases}
+    0                       & j \text{ absorbing} \\
+    \sum_k P_{jk} \cdot m_k & \text{otherwise} \\
+  \end{cases}
+\end{math}
 % (end)
 % (fold) Hypothesis Testing
 \section{Hypothesis Testing}
