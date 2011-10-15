@@ -1,12 +1,21 @@
+PDFLATEX := pdflatex -output-directory build
+
+test:
+	echo $(cat build/revision)
+
 all: sheet.pdf
 
+run: dist
+	cp build/dist.pdf ${HOME}/dropbox/public/sheet.pdf
+
+dist: dist.pdf
+
+dist.pdf: sheet.tex
+	cp sheet.tex build/dist.tex
+	./update-revision.sh
+	$(PDFLATEX) build/dist.tex
+
 sheet.pdf: sheet.tex
-	pdflatex sheet.tex
-
-run: sheet.pdf
-	cp sheet.pdf ${HOME}/dropbox/public/
-
-clean:
-	$(RM) sheet.pdf sheet.out sheet.log sheet.aux
+	$(PDFLATEX) sheet.tex
 
 .PHONY: clean
