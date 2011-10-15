@@ -1,8 +1,5 @@
 PDFLATEX := pdflatex -output-directory build
 
-test:
-	echo $(cat build/revision)
-
 all: sheet.pdf
 
 run: dist
