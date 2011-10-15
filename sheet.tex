@@ -16,7 +16,6 @@
 \newcommand{\expect}[1]{\mathrm{E} \left[ {#1} \right]}
 \newcommand{\cidist}[1]{{#1}_{\frac{\alpha}{2}}}
 \newcommand{\pisigma}[0]{\frac{1}{\sqrt{2 \pi \sigma^2}}}
-\newcommand{\intinf}[0]{\int_{-\infty}^{\infty}}
 
 \pdfinfo{
   /Title (sheet.pdf)
@@ -442,18 +441,6 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
            = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
            = (use\ \sum_{x=0}^{\infty}{\frac{\lambda^x}{x!}} = e^\lambda)
            = e^{\lambda(e^t-1)}
-\end{math} \\[2pt]
-
-\subsubsection{Normal Distribution}
-\begin{math}
-  m_{x}(t) = \intinf e^{tx}\frac{exp(-\frac{(x-\mu)^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}} \, dx
-           = \pisigma \intinf exp(-\frac{x^2-2\mu x + \mu^2 - 2\sigma^2 tx}{2\sigma^2}) \, dx
-           = \pisigma \intinf exp(-\frac{x^2-2x(\mu+\sigma^2t) - (\mu+\sigma^2 t)^2 + (\mu+\sigma^2 t)^2}{2\sigma^2}) \, dx
-           = exp(-\frac{\mu^2 - (\mu + \sigma^2 t)^2}{2\sigma^2} )
-             \cdot
-             \pisigma \intinf exp(-\frac{(x - (\mu+\sigma^2 t))^2}{2\sigma^2}) \, dx
-           = [\text{the integral equals } 1]
-           = exp(\mu t +\frac{\sigma^2 t^2}{2})
 \end{math} \\[2pt]
 
 \subsection{Markov}
