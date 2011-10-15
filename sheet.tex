@@ -74,14 +74,29 @@
 % (fold) Probability
 \section{Probability}
 \begin{math}
+  P(\emptyset) = 0, P(\Omega) = 1,
+  P(A^c) = 1 - P(A),
+  A^c \cup A = \Omega
+\end{math} \\[2pt]
+\begin{math}
+  P(A^c) + P(A) = P(A^c \cup A) = P(\Omega) = 1
+\end{math} \\[2pt]
+\begin{math}
+  P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\end{math} \\[2pt]
+\begin{math}
+  P(A) = P(A \cap B^c) + P(A \cap B) + P(A^c \cap B) + P(A \cap B) = P(A \cup B) + P(A \cap B)
+\end{math} \\[2pt]
+\begin{math}
   P(A|B) = \frac{P(A \cap B)}{P(B)}
-\end{math}
+\end{math} \\[0pt]
 \begin{math}
   \text{A, B independent if } P(A \cap B) = P(A) \cdot P(B)
-\end{math}
+\end{math} \\[2pt]
 \begin{math}
   \text{Bayes: } P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 \end{math} \\[2pt]
+
 % (end)
 % (fold) Random Variables
 \section{Random Variables}
