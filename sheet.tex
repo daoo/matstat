@@ -554,6 +554,37 @@ If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\ba
                 = \sum_{x \in \Omega} \left[ h(x) \cdot P(X = x) \right]
                 = \sum_{x \in \Omega} \left[ h(x) \cdot f_x(x) \right]
 \end{math} \\[2pt]
+\begin{math}
+  EXY = \sum_x \left[ \sum_y\left[xy\cdot f_{xy}(x,y)\right] \right ]
+      = \text{independent} 
+      = \sum_x \left[\sum_y{\left[ xy\cdot f_x(x)f_y(y)\right] }\right] 
+      = \sum_x \left[{xf_x(x)}\sum_y\left[{yf_y(y)\right ]}\right ]
+      = EXEY
+\end{math} \\[2pt]
+\begin{math}
+  E[X+Y] = \sum_r\left[ r\cdot P(X+Y=r)\right]
+         = \sum_{k,j}\left[ (x_{j}+y_{k})P(X=x_{j},Y=y_{j})\right ]
+         = \sum_{k,j}\left[ x_{j}\cdot P(X=x_{j},Y=y_{j})\right ] + 
+           \sum_{k,j}\left[ y_{k}\cdot P(X=x_{j},Y=y_{j})\right ] 
+         = \sum_j\left[x_{j}\sum_k \left [ P(X=x_{j},Y=y_{j})\right ] \right ] + 
+           \sum_k\left[ y_{k}\sum_y\left[ P(X=x_{j},Y=y_{j})\right ]\right ]
+         = \sum_j\left[x_j\cdot P(X=x_j) \right ] + \sum_k \left[y_k\cdot P(Y=y_k) \right ] 
+         = EXEY
+\end{math} \\[2pt]
+\begin{math}
+  Var(X) = E(X-EX)^2 
+         = E(X^2 - 2XEX + (EX)^2) 
+         = EX^2 - 2EXEX + E((EX)^2) 
+         = EX^2 - 2(EX)^2 + (EX)^2 
+         = EX^2 - (EX)^2
+\end{math} \\[2pt]
+\begin{math}
+  Var(X+Y) = E((X+Y)^2) - (E(X+Y))^2 
+           = E(X^2 + Y^2 + 2XY) - (EX+EY)^2
+           = EX^2-(EX)^2 + EY -(EY)^2 + 2E(XY) - 2EXEY 
+           = Var(X)+Var(Y)+2Cov(X,Y)
+           = \text{if X,Y independent}=Var(X)+Var(Y)
+\end{math} \\[2pt]
 % (end)
   %
 \newpage
