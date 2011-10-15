@@ -446,10 +446,9 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 
 \newpage
 
-% (fold) Proofs
-\section{Proofs}
-\subsection{Moment Generating Functions}
-\subsubsection{Geometric Distribution}
+% (fold) Moment Generating Functions
+\section{Moment Generating Functions}
+\subsection{Geometric Distribution}
 \begin{math}
   m_{x}(T) = \sum_{x=1}^{\infty}{e^{tx}(1-p)^{n-1}p}
            = pe^t \sum_{x=1}^{\infty}{e^{t(x-1)}(1-p)^{x-1}}
@@ -458,7 +457,7 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
            = \frac{pe^t}{1-e^t(1-p)}
 \end{math} \\[2pt]
 
-\subsubsection{Binomial Distribution}
+\subsection{Binomial Distribution}
 \begin{math}
   m_{x}(T) = \sum_{x=0}^{n}{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
            = \sum_{x=0}^{n}{\binom{n}{x}(pe^t)^x(1-p)^{n-x}}
@@ -466,7 +465,7 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
            = (pe^t +q)^n = (p(e^t-1)+1)^n
 \end{math} \\[2pt]
 
-\subsubsection{Exponential Distribution}
+\subsection{Exponential Distribution}
 \begin{math}
   m_{x}(t) = \int_{0}^{\infty}{e^{tx} \lambda e^{-\lambda x}dx}
            = \lambda \int_{0}^{\infty}{e^{x(t-\lambda)}dx}
@@ -485,14 +484,16 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
            = 1 - e^{-\lambda x}
 \end{math} \\[2pt]
 
-\subsubsection{Poisson Distribution}
+\subsection{Poisson Distribution}
 \begin{math}
   m_{x}(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
            = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
            = (use\ \sum_{x=0}^{\infty}{\frac{\lambda^x}{x!}} = e^\lambda)
            = e^{\lambda(e^t-1)}
 \end{math} \\[2pt]
-
+% (end)
+% (fold) Inequalitites
+\section{Inequalities}
 \subsection{Markov}
 \begin{math}
   \expect{X} = \int_0^{\infty}{xf_x(x)dx}
@@ -507,8 +508,9 @@ Use Markov's Inequality:
   P(|X-\mu| \geq \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \leq \frac{E|X-\mu|^2}{\varepsilon^2}
                               = \frac{Var(X)}{\varepsilon^2}
 \end{math} \\[2pt]
-
-\subsection{Confidence Intervals}
+% (end)
+% (fold) Confidence Intervals
+\section{Confidence Intervals}
 \begin{math}
   X_1, \dotsc, X_n; X_i \sim N(\mu, \sigma^2)
 \end{math} \\[2pt]
@@ -523,9 +525,10 @@ Using that we can construct \(1 - \alpha\) CI intervals.
   P(\bar{X}-Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X}+Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}) =
   1 - \alpha
 \end{math} \\[2pt]
-
-\subsection{Markov Chains}
-\subsubsection{Absorbing Chain}
+% (end)
+% (fold) Markov Chains
+\section{Markov Chains}
+\subsection{Absorbing Chain}
 Assume j not absorbing and let A = \{chain absorbed in a\}:
 \begin{math}
   q_j = P(A|x_0 = j)
@@ -544,8 +547,9 @@ If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\ba
            = [\text{matrix} \cdot \text{vector}]
            = \bar{u}Pj
 \end{math} \\[2pt]
-
-\subsection{Expected and Variance}
+% (end)
+% (fold) Expectation and Variance
+\section{Expectation and Variance}
 \begin{math}
   \expect{h(X)} = \sum_k \left[ k \cdot f_{h(X)}(k) \right]
                 = \sum_k \left[ k \cdot P(h(X) = k) \right]
@@ -554,39 +558,42 @@ If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\ba
                 = \sum_{x \in \Omega} \left[ h(x) \cdot P(X = x) \right]
                 = \sum_{x \in \Omega} \left[ h(x) \cdot f_x(x) \right]
 \end{math} \\[2pt]
+\begin{math} \end{math} \\[2pt]
 \begin{math}
-  EXY = \sum_x \left[ \sum_y\left[xy\cdot f_{xy}(x,y)\right] \right ]
-      = \text{independent} 
-      = \sum_x \left[\sum_y{\left[ xy\cdot f_x(x)f_y(y)\right] }\right] 
-      = \sum_x \left[{xf_x(x)}\sum_y\left[{yf_y(y)\right ]}\right ]
-      = EXEY
+  \expect{XY} = \sum_x \left[ \sum_y \left[ xy \cdot f_{XY}(x,y) \right] \right]
+              = \text{independent}
+              = \sum_x \left[ \sum_y \left[ xy \cdot f_Y(x)f_Y(y) \right] \right]
+              = \sum_x \left[ xf_X(x) \right] \cdot \sum_y \left[ yf_Y(y) \right]
+              = \expect{X} \cdot \expect{Y}
 \end{math} \\[2pt]
+\begin{math} \end{math} \\[2pt]
 \begin{math}
-  E[X+Y] = \sum_r\left[ r\cdot P(X+Y=r)\right]
-         = \sum_{k,j}\left[ (x_{j}+y_{k})P(X=x_{j},Y=y_{j})\right ]
-         = \sum_{k,j}\left[ x_{j}\cdot P(X=x_{j},Y=y_{j})\right ] + 
-           \sum_{k,j}\left[ y_{k}\cdot P(X=x_{j},Y=y_{j})\right ] 
-         = \sum_j\left[x_{j}\sum_k \left [ P(X=x_{j},Y=y_{j})\right ] \right ] + 
-           \sum_k\left[ y_{k}\sum_y\left[ P(X=x_{j},Y=y_{j})\right ]\right ]
-         = \sum_j\left[x_j\cdot P(X=x_j) \right ] + \sum_k \left[y_k\cdot P(Y=y_k) \right ] 
-         = EXEY
+  \expect{X + Y} = \sum_r \left[ r \cdot P(X + Y = r) \right]
+                 = \sum_{k,j} \left[ (x_j + y_k) P(X = x_j,Y = y_j) \right]
+                 = \sum_{k,j} \left[ x_j \cdot P(X=x_j,Y=y_j) \right] + 
+                   \sum_{k,j} \left[ y_k \cdot P(X=x_j,Y=y_j) \right] 
+                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_j) \right] \right] + 
+                   \sum_k \left[ y_k \sum_y \left[ P(X = x_j, Y = y_j) \right] \right]
+                 = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right] 
+                 = \expect{X} \expect{Y}
 \end{math} \\[2pt]
+\begin{math} \end{math} \\[2pt]
 \begin{math}
-  Var(X) = E(X-EX)^2 
-         = E(X^2 - 2XEX + (EX)^2) 
-         = EX^2 - 2EXEX + E((EX)^2) 
-         = EX^2 - 2(EX)^2 + (EX)^2 
-         = EX^2 - (EX)^2
+  Var(X) = \expect{X - \expect{X}}^2
+         = \expect{X^2 - 2X \expect{X} + \expect{X}^2}
+         = \expect{X^2} - 2 \expect{X} \expect{X} + \expect{\expect{X}^2}
+         = \expect{X^2} - 2 \expect{X}^2 + \expect{X}^2
+         = \expect{X^2} - \expect{X}^2
 \end{math} \\[2pt]
+\begin{math} \end{math} \\[2pt]
 \begin{math}
-  Var(X+Y) = E((X+Y)^2) - (E(X+Y))^2 
-           = E(X^2 + Y^2 + 2XY) - (EX+EY)^2
-           = EX^2-(EX)^2 + EY -(EY)^2 + 2E(XY) - 2EXEY 
-           = Var(X)+Var(Y)+2Cov(X,Y)
-           = \text{if X,Y independent}=Var(X)+Var(Y)
+  Var(X + Y) = \expect{(X + Y)^2} - \expect{X + Y}^2 
+             = \expect{X^2 + Y^2 + 2XY} - (\expect{X} + \expect{Y})^2
+             = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2\expect{XY} - 2 \expect{X} \expect{Y} 
+             = Var(X) + Var(Y) + 2Cov(X,Y)
 \end{math} \\[2pt]
 % (end)
-  %
+
 \newpage
 
 \end{multicols}
