@@ -468,58 +468,58 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \end{math} \\[2pt]
 
 \subsection{Cherbychev}
+Use Markov's Inequality:
 \begin{math}
-  P(|X-\mu| \ge \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \le(med\ markov's)\ \frac{E|X-\mu|^2}{\varepsilon^2}
-                             = \frac{Var(X)}{\varepsilon^2}
+  P(|X-\mu| \geq \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \leq \frac{E|X-\mu|^2}{\varepsilon^2}
+                              = \frac{Var(X)}{\varepsilon^2}
 \end{math} \\[2pt]
 
 \subsection{Confidence Intervals}
 \begin{math}
-  X_{1}..X_{n},\ X_i \sim N(\mu,\sigma^2)
+  X_1, \dotsc, X_n; X_i \sim N(\mu, \sigma^2)
 \end{math} \\[2pt]
 \begin{math}
   \text{Use the CTL to get } \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1)
 \end{math} \\[2pt]
 Using that we can construct \(1 - \alpha\) CI intervals.
 \begin{math}
-  P(Z_{\alpha/2} \le \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \le Z_{\alpha/2}) =
-  P(|\frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \le Z_{\alpha/2}|) =
-  P(|\bar{X}-\mu| \le Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}) =
-  P(\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}) =
+  P(-Z_{\frac{\alpha}{2}} \leq \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \leq Z_{\frac{\alpha}{2}}) =
+  P(\left| \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \leq Z_{\frac{\alpha}{2}} \right|) =
+  P(|\bar{X}-\mu| \le Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}) =
+  P(\bar{X}-Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X}+Z_{\frac{\alpha}{2}} \cdot \frac{\sigma}{\sqrt{n}}) =
   1 - \alpha
 \end{math} \\[2pt]
 
 \subsection{Markov Chains}
+Chance of absorbing in state a, starting from j: 0 if j absorbing otherwise:
 \begin{math}
-  \text{chance of absorbing in state a, startning from j: 0 if j absorbing otherwise: }
   q_j = P(A|x_0 = j)
-      = (\frac{P(A\cap (x_0 = k)}{P(x_0 = j)})
-      = (\frac{\sum_{k}{P(A\cap x_0 = j \cap x_1 = k)}}{P(x_0 = j)})
-      = (\sum_k{P(A|x_0 = j)P(x_1 = k | x_0 = j)})
-      = (\sum_k{P(A|x_1=k)P_{jk}})
-      = (\sum_k{q_kP_{ij}})
+      = \frac{P(A \cap (x_0 = k))}{P(x_0 = j)}
+      = \frac{\sum_{k}{P(A \cap (x_0 = j) \cap (x_1 = k))}}{P(x_0 = j)}
+      = \sum_k \left[ P(A|x_0 = j) \cdot P(x_1 = k | x_0 = j) \right]
+      = \sum_k \left[ P(A|x_1=k) \cdot P_{jk} \right]
+      = \sum_k q_kP_{ij}
 \end{math} \\[2pt]
+If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\bar{u}P\):
 \begin{math}
-  if\ x_n\ has\ distribution\ \bar{u},\ then\ x_{n+1}\ has\ distribution\ \bar{u}P:\ 
   P(x_{n+1}=j)
-           = (\sum_i{P(x_n=i)P(x_{n+1}=j|x_n=i)})
-           = (\sum_i{u_iP_{ij}})
-           = (\text{matris vektor multiplikation})
-           = (\bar{u}P)j
+           = \sum_i \left[ P(x_n=i) \cdot P(x_{n+1}=j|x_n=i) \right]
+           = \sum_i \left[ u_iP_{ij} \right]
+           = [\text{matrix} \cdot \text{vector}]
+           = \bar{u}Pj
 \end{math} \\[2pt]
-% (end)
 
 \subsection{Expected and Variance}
 \begin{math}
-  E[h(X)] = (\sum_k{k\cdot f_{h(x)}(x)})
-          = (\sum_h{k\cdot P(h(x)=k)})
-          = (\sum_k{k}\sum_{x\epsilon \Omega, h(x)=k}{P(X=x)})
-          = (\sum_{x\epsilon \Omega}{}\sum_{k,\ h(x)=k}{k\cdot P(X=x)})
-          = (\sum_{x\epsilon \Omega}{h(x)P(X=x)})
-          = (\sum_{x\epsilon \Omega}{h(x)f_x(x)})
+  \expect{h(X)} = \sum_k \left[ k \cdot f_{h(x)}(x) \right]
+                = \sum_h \left[ k \cdot P(h(x) = k) \right]
+                = \sum_k \left[ k \cdot \sum_{x \in \Omega, h(x) = k} \left[ P(X = x) \right] \right]
+                = \sum_{x \in \Omega} \left[ \sum_{k, h(x) = k} \left[ k \cdot P(X = x) \right] \right]
+                = \sum_{x \in \Omega} \left[ h(x) \cdot P(X = x) \right]
+                = \sum_{x \in \Omega} \left[ h(x) \cdot f_x(x) \right]
 \end{math} \\[2pt]
-\begin{math}
-\end{math} \\[2pt]
+% (end)
+  %
 \newpage
 
 \end{multicols}
