@@ -450,19 +450,18 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \section{Moment Generating Functions}
 \subsection{Geometric Distribution}
 \begin{math}
-  m_{x}(T) = \sum_{x=1}^{\infty}{e^{tx}(1-p)^{n-1}p}
-           = pe^t \sum_{x=1}^{\infty}{e^{t(x-1)}(1-p)^{x-1}}
-           = pe^t \sum_{x=0}^{\infty}{e^{tx}(1-p)^x}
-           = pe^t \sum_{x=0}^{\infty}{(e^t(1-p))^x}
+  m_{x}(t) = \sum_{x = 1}^{\infty} e^{tx} (1 - p)^{n - 1}p
+           = pe^t \sum_{x = 1}^{\infty}{e^{t(x - 1)}(1 - p)^{x - 1}}
+           = pe^t \sum_{x = 0}^{\infty}{e^{tx}(1 - p)^x}
+           = pe^t \sum_{x = 0}^{\infty}{(e^t(1 - p))^x}
            = \frac{pe^t}{1-e^t(1-p)}
 \end{math} \\[2pt]
 
 \subsection{Binomial Distribution}
 \begin{math}
-  m_{x}(T) = \sum_{x=0}^{n}{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
+  m_{x}(t) = \sum_{x=0}^{n}{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
            = \sum_{x=0}^{n}{\binom{n}{x}(pe^t)^x(1-p)^{n-x}}
-           = enl.\ biominalsatsen
-           = (pe^t +q)^n = (p(e^t-1)+1)^n
+           = (pe^t + (1 - p))^n = (p(e^t-1)+1)^n
 \end{math} \\[2pt]
 
 \subsection{Exponential Distribution}
