@@ -448,6 +448,9 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
   = \sum\limits_{n = 0}^{\infty} \binom{n + k}{k} x^n
   = \frac{1}{(1 - x)^{k + 1}}
 \end{math} \\[2pt]
+\begin{math}
+  \sum_{k = 0}^{n} \binom{n}{k} x^{n-k}y^k = \sum_{k = 0}^{n} \binom{n}{k} x^ky^{n - k} = (x + y)^n
+\end{math} \\[2pt]
 % (end)
 
 \newpage
@@ -471,10 +474,10 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \end{math} \\[2pt]
 
 \subsection{Exponential Distribution}
+Only if \(t < \lambda\)
 \begin{math}
   m_{x}(t) = \int_{0}^{\infty}{e^{tx} \lambda e^{-\lambda x}dx}
            = \lambda \int_{0}^{\infty}{e^{x(t-\lambda)}dx}
-           = (\text{only if } t < \lambda)
            = \lambda \left[\frac{e^{x(t-\lambda)}}{t-\lambda}\right]_{0}^{\infty}
            = \lambda \left(0-\frac{1}{t-\lambda}\right)
            = \frac{\lambda}{\lambda - t}
