@@ -427,6 +427,15 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
            = \frac{\lambda}{\lambda - t}
 \end{math} \\[2pt]
 
+\begin{math}
+  F_{x}(x) = P(X \le x) 
+           = \int_0^x{f_{x}(s)ds} 
+           = \int_0^x{\lambda e^{-\lambda s}ds} 
+           = \lambda \left[-\frac{1}{\lambda}e^{-\lambda s} \right ]_0^x 
+           = (-1)(e^{-\lambda x} -1) 
+           = 1 - e^{-\lambda x}
+\end{math} \\[2pt]
+
 \subsubsection{Poisson Distribution}
 \begin{math}
   m_{x}(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
