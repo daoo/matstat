@@ -357,6 +357,11 @@ Norm \\
   m_{x}(t) = \int_{-\infty}^{\infty}{e^{tx}\frac{exp(-\frac{(x-\mu)^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}dx} = \frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2\mu x + \mu^2 - 2\sigma^2 tx))dx} = \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2x(\mu+\sigma^2t) - (\mu+\sigma^2 t)^2 + (\mu+\sigma^2 t)^2))dx} = exp(-\frac{1}{2\sigma^2}(\mu^2 - (\mu + \sigma^2 t)^2))\cdot \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x-(\mu+\sigma^2 t)^2))dx} = hela\ R.V.\ ger\ 1\ (biten\ efter\ \cdot) = exp(\mu t +\frac{\sigma^2 t^2}{2})
 \end{math} \\[2pt]
 
+\subsection{Markov}
+\begin{math}
+  E[X] = \int_0^{\infty}{xf_x(x)dx} = \int_0^t{xf_x(x)dx} + \int_t^{\infty}{xf_x(x)dx} \ge 0 + \int_t^\infty{tf_x(x)dx} = t\int_t^\infty{f_x(x)dx} = tP(X \ge t) \Rightarrow \frac{E[X]}{t} \ge P(X \ge t)
+\end{math} \\[2pt]
+
 \newpage
 
 \end{multicols}
