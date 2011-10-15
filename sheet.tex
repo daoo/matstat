@@ -341,6 +341,18 @@ Bio \\
 \begin{math}
   m_{x}(T) = \sum_{x=0}^{n}{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}} = \sum_{x=0}^{n}{\binom{n}{x}(pe^t)^x(1-p)^{n-x}} = enl.\ biominalsatsen = (pe^t +q)^n = (p(e^t-1)+1)^n
 \end{math} \\[2pt]
+Exp \\
+\begin{math}
+  m_{x}(t) = \int_{0}^{\infty}{e^{tx} \lambda e^{-\lambda x}dx} = \lambda \int_{0}^{\infty}{e^{x(t-\lambda)}dx} = \lambda \left[\frac{e^{x(t-\lambda)}}{t-\lambda}\right]_{0}^{\infty} = \lambda \left(0-\frac{1}{t-\lambda}\right) = \frac{\lambda}{\lambda - t}
+\end{math} \\[2pt]
+Poi \\
+\begin{math}
+  m_{x}(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!} = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}} = e^{\lambda(e^t-1)}
+\end{math} \\[2pt]
+Norm \\
+\begin{math}
+  m_{x}(t) = \int_{-\infty}^{\infty}{e^{tx}\frac{exp(-\frac{(x-\mu)^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}dx} = \frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2\mu x + \mu^2 - 2\sigma^2 tx))dx} = \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2x(\mu+\sigma^2t) - (\mu+\sigma^2 t)^2 + (\mu+\sigma^2 t)^2))dx} = exp(-\frac{1}{2\sigma^2}(\mu^2 - (\mu + \sigma^2 t)^2))\cdot \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x-(\mu+\sigma^2 t)^2))dx} = hela\ R.V.\ ger\ 1\ (biten\ efter\ \cdot) = exp(\mu t +\frac{\sigma^2 t^2}{2})
+\end{math} \\[2pt]
 
 \newpage
 
