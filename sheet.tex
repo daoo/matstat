@@ -487,8 +487,38 @@ Using that we can construct \(1 - \alpha\) CI intervals.
   P(\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}) =
   1 - \alpha
 \end{math} \\[2pt]
+
+\subsection{Markov Chains}
+\begin{math}
+  \text{chance of absorbing in state a, startning from j: 0 if j absorbing otherwise: }
+  q_j = P(A|x_0 = j)
+      = (\frac{P(A\cap (x_0 = k)}{P(x_0 = j)})
+      = (\frac{\sum_{k}{P(A\cap x_0 = j \cap x_1 = k)}}{P(x_0 = j)})
+      = (\sum_k{P(A|x_0 = j)P(x_1 = k | x_0 = j)})
+      = (\sum_k{P(A|x_1=k)P_{jk}})
+      = (\sum_k{q_kP_{ij}})
+\end{math} \\[2pt]
+\begin{math}
+  if\ x_n\ has\ distribution\ \bar{u},\ then\ x_{n+1}\ has\ distribution\ \bar{u}P:\ 
+  P(x_{n+1}=j)
+           = (\sum_i{P(x_n=i)P(x_{n+1}=j|x_n=i)})
+           = (\sum_i{u_iP_{ij}})
+           = (\text{matris vektor multiplikation})
+           = (\bar{u}P)j
+\end{math} \\[2pt]
 % (end)
 
+\subsection{Expected and Variance}
+\begin{math}
+  E[h(X)] = (\sum_k{k\cdot f_{h(x)}(x)})
+          = (\sum_h{k\cdot P(h(x)=k)})
+          = (\sum_k{k}\sum_{x\epsilon \Omega, h(x)=k}{k\cdot P(X=x)})
+          = (\sum_{x\epsilon \Omega}{}\sum_{k,\ h(x)=k}{k\cdot P(X=x)})
+          = (\sum_{x\epsilon \Omega}{h(x)P(X=x)})
+          = (\sum{x\epsilon \Omega}{h(x)f_x(x)})
+\end{math} \\[2pt]
+\begin{math}
+\end{math} \\[2pt]
 \newpage
 
 \end{multicols}
