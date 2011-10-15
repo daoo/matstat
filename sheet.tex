@@ -249,14 +249,25 @@
   \expect{X^2} = \frac{2}{\lambda^2},
   Var(X) = \frac{1}{\lambda^2}
 \end{math} \\[2pt]
-
+% (end)
+% (fold) Estimation
+\section{Estimation}
+\begin{math}
+  \bar{X} = \frac{1}{n} \sum\limits_{i = 1}^n X_i,
+  S^2 = \frac{1}{n - 1} \sum\limits_{i=1}^n (X_i - \bar{X})^2
+\end{math} \\[2pt]
+\subsection{Central Limit Theorem}
+\begin{math}
+  \bar{X} \sim N(\mu, \frac{\sigma^2}{n}) \Rightarrow \frac{\bar{X} - \mu}{\frac{\sigma^2}{n}} \sim N(0, 1)
+\end{math} \\[2pt]
+\subsection{Confidence Interval}
 % (end)
 
-\section{Central Limit Theorem}
-
-\section{Estimation}
-
 \section{Markov Chains}
+
+\section{Hypothesis Testing}
+
+\section{Generating Functions}
 
 \newpage
 
