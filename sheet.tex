@@ -491,7 +491,8 @@ Using that we can construct \(1 - \alpha\) CI intervals.
 \end{math} \\[2pt]
 
 \subsection{Markov Chains}
-Chance of absorbing in state a, starting from j: 0 if j absorbing otherwise:
+\subsubsection{Absorbing Chain}
+Assume j not absorbing and let A = \{chain absorbed in a\}:
 \begin{math}
   q_j = P(A|x_0 = j)
       = \frac{P(A \cap (x_0 = k))}{P(x_0 = j)}
@@ -511,10 +512,10 @@ If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\ba
 
 \subsection{Expected and Variance}
 \begin{math}
-  \expect{h(X)} = \sum_k \left[ k \cdot f_{h(x)}(x) \right]
-                = \sum_h \left[ k \cdot P(h(x) = k) \right]
-                = \sum_k \left[ k \cdot \sum_{x \in \Omega, h(x) = k} \left[ P(X = x) \right] \right]
-                = \sum_{x \in \Omega} \left[ \sum_{k, h(x) = k} \left[ k \cdot P(X = x) \right] \right]
+  \expect{h(X)} = \sum_k \left[ k \cdot f_{h(X)}(k) \right]
+                = \sum_k \left[ k \cdot P(h(X) = k) \right]
+                = \sum_k \left[ k \cdot \sum_{x \in \Omega, h(X) = k} \left[ P(X = x) \right] \right]
+                = \sum_{x \in \Omega} \left[ \sum_{k, h(X) = k} \left[ k \cdot P(X = x) \right] \right]
                 = \sum_{x \in \Omega} \left[ h(x) \cdot P(X = x) \right]
                 = \sum_{x \in \Omega} \left[ h(x) \cdot f_x(x) \right]
 \end{math} \\[2pt]
