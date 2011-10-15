@@ -15,6 +15,8 @@
 
 \newcommand{\expect}[1]{\mathrm{E} \left[ {#1} \right]}
 \newcommand{\cidist}[1]{{#1}_{\frac{\alpha}{2}}}
+\newcommand{\pisigma}[0]{\frac{1}{\sqrt{2 \pi \sigma^2}}}
+\newcommand{\intinf}[0]{\int_{-\infty}^{\infty}}
 
 \pdfinfo{
   /Title (sheet.pdf)
@@ -227,7 +229,7 @@
   X \sim N(\mu, \sigma^2)
 \end{math} \\[0pt]
 \begin{math}
-  f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp(-\frac{(x - \mu)^2}{2 \sigma^2})
+  f(x) = \pisigma \cdot exp(-\frac{(x - \mu)^2}{2 \sigma^2})
 \end{math} \\[0pt]
 
 \subsection{Standard Normal Distribution}
@@ -435,11 +437,13 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 
 \subsubsection{Normal Distribution}
 \begin{math}
-  m_{x}(t) = \int_{-\infty}^{\infty}{e^{tx}\frac{exp(-\frac{(x-\mu)^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}dx}
-           = \frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2\mu x + \mu^2 - 2\sigma^2 tx))dx}
-           = \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x^2-2x(\mu+\sigma^2t) - (\mu+\sigma^2 t)^2 + (\mu+\sigma^2 t)^2))dx}
-           = exp(-\frac{1}{2\sigma^2}(\mu^2 - (\mu + \sigma^2 t)^2))\cdot \frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}{exp(-\frac{1}{2\sigma^2}(x-(\mu+\sigma^2 t)^2))dx}
-           = hela\ R.V.\ ger\ 1\ (biten\ efter\ \cdot)
+  m_{x}(t) = \intinf e^{tx}\frac{exp(-\frac{(x-\mu)^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}} \, dx
+           = \pisigma \intinf exp(-\frac{x^2-2\mu x + \mu^2 - 2\sigma^2 tx}{2\sigma^2}) \, dx
+           = \pisigma \intinf exp(-\frac{x^2-2x(\mu+\sigma^2t) - (\mu+\sigma^2 t)^2 + (\mu+\sigma^2 t)^2}{2\sigma^2}) \, dx
+           = exp(-\frac{\mu^2 - (\mu + \sigma^2 t)^2}{2\sigma^2} )
+             \cdot
+             \pisigma \intinf exp(-\frac{(x - (\mu+\sigma^2 t))^2}{2\sigma^2}) \, dx
+           = [\text{the integral equals } 1]
            = exp(\mu t +\frac{\sigma^2 t^2}{2})
 \end{math} \\[2pt]
 
