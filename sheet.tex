@@ -343,7 +343,24 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \begin{math}
   A(x) \cdot B(x) \rightarrow c_n = a_0b_n + a_1b_{n - 1} + \dotsb + a_{n - 1}b_1 + a_nb_0
 \end{math} \\[2pt]
+
 \subsection{Moment Generating Functions}
+\begin{math}
+  \expect{X^n} \text{ is the } n\text{-th moment}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X - \expect{X}}^n \text{ is the } n\text{-th central moment}
+\end{math} \\[2pt]
+\begin{math}
+  m_X(t) = \expect{e^{tX}}
+\end{math} \\[2pt]
+\begin{math}
+  m_X^{(n)}(0) = \expect{X^n}
+\end{math} \\[2pt]
+\begin{math}
+  m_X(t) = m_Y(t) \Rightarrow \text{X, Y equally distributed}
+\end{math} \\[2pt]
+
 % (end)
 % (fold) Inequalities
 \section{Inequalities}
@@ -424,6 +441,22 @@ Norm \\
 \begin{math}
   P(|X-\mu| \ge \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \le(med\ markov's)\ \frac{E|X-\mu|^2}{\varepsilon^2}
                              = \frac{Var(X)}{\varepsilon^2}
+\end{math} \\[2pt]
+
+\subsection{Confidence Intervals}
+\begin{math}
+  X_{1}..X_{n},\ X_i \sim N(\mu,\sigma^2)
+\end{math} \\[2pt]
+\begin{math}
+  \text{Use the CTL to get } \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1)
+\end{math} \\[2pt]
+Using that we can construct \(1 - \alpha\) CI intervals.
+\begin{math}
+  P(Z_{\alpha/2} \le \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \le Z_{\alpha/2}) =
+  P(|\frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \le Z_{\alpha/2}|) =
+  P(|\bar{X}-\mu| \le Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}) =
+  P(\bar{X}-Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X}+Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}) =
+  1 - \alpha
 \end{math} \\[2pt]
 % (end)
 
