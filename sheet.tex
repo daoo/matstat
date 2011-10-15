@@ -513,7 +513,8 @@ Assume j not absorbing and let A = \{chain absorbed in a\}:
   q_j = P(A|x_0 = j)
       = \frac{P(A \cap (x_0 = k))}{P(x_0 = j)}
       = \frac{\sum_{k}{P(A \cap (x_0 = j) \cap (x_1 = k))}}{P(x_0 = j)}
-      = \sum_k \left[ P(A|x_0 = j) \cdot P(x_1 = k | x_0 = j) \right]
+      = \sum_k{\left[P(A|x_0=j \cap x_1 = k) \cdot \frac{P(X_0 = j \cap x_1 = k)}{P(X_0 = j)} \right ]}
+      = \sum_k \left[ P(A|x_1 = k) \cdot P(x_1 = k | x_0 = j) \right]
       = \sum_k \left[ P(A|x_1=k) \cdot P_{jk} \right]
       = \sum_k q_kP_{ij}
 \end{math} \\[2pt]
