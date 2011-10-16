@@ -625,13 +625,13 @@ If \(X, Y\) independent
 \subsection{Addition}
 \begin{math}
   \expect{X + Y} = \sum_r \left[ r \cdot P(X + Y = r) \right]
-                 = \sum_{j, k} \left[ (x_j + y_k) P(X = x_j,Y = y_j) \right]
-                 = \sum_{j, k} \left[ x_j \cdot P(X=x_j,Y=y_j) \right] +
-                   \sum_{j, k} \left[ y_k \cdot P(X=x_j,Y=y_j) \right]
-                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_j) \right] \right] +
-                   \sum_k \left[ y_k \sum_y \left[ P(X = x_j, Y = y_j) \right] \right]
+                 = \sum_{j, k} \left[ (x_j + y_k) P(X = x_j,Y = y_k) \right]
+                 = \sum_{j, k} \left[ x_j \cdot P(X = x_j,Y = y_k) \right] +
+                   \sum_{j, k} \left[ y_k \cdot P(X = x_j,Y = y_k) \right]
+                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_k) \right] \right] +
+                   \sum_k \left[ y_k \sum_j \left[ P(X = x_j, Y = y_k) \right] \right]
                  = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right] 
-                 = \expect{X} \expect{Y}
+                 = \expect{X} + \expect{Y}
 \end{math} \\[2pt]
 % (end)
 % (fold) Variance
