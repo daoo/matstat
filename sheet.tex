@@ -616,7 +616,7 @@ Assume j not absorbing and let A = \{chain absorbed in a\}:
 \subsection{Multiplication}
 If \(X, Y\) independent
 \begin{math}
-  \expect{XY} = \sum_x \left[ \sum_y \left[ xy \cdot f_{XY}(x,y) \right] \right]
+  \expect{XY} = \sum_{x, y} \left[ xy \cdot f_{XY}(x,y) \right]
               = \sum_x \left[ \sum_y \left[ xy \cdot f_X(x)f_Y(y) \right] \right]
               = \sum_x \left[ xf_X(x) \right] \cdot \sum_y \left[ yf_Y(y) \right]
               = \expect{X} \cdot \expect{Y}
@@ -625,10 +625,10 @@ If \(X, Y\) independent
 \subsection{Addition}
 \begin{math}
   \expect{X + Y} = \sum_r \left[ r \cdot P(X + Y = r) \right]
-                 = \sum_{k,j} \left[ (x_j + y_k) P(X = x_j,Y = y_j) \right]
-                 = \sum_{k,j} \left[ x_j \cdot P(X=x_j,Y=y_j) \right] + 
-                   \sum_{k,j} \left[ y_k \cdot P(X=x_j,Y=y_j) \right] 
-                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_j) \right] \right] + 
+                 = \sum_{j, k} \left[ (x_j + y_k) P(X = x_j,Y = y_j) \right]
+                 = \sum_{j, k} \left[ x_j \cdot P(X=x_j,Y=y_j) \right] +
+                   \sum_{j, k} \left[ y_k \cdot P(X=x_j,Y=y_j) \right]
+                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_j) \right] \right] +
                    \sum_k \left[ y_k \sum_y \left[ P(X = x_j, Y = y_j) \right] \right]
                  = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right] 
                  = \expect{X} \expect{Y}
