@@ -474,25 +474,25 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 % (fold) Moment Generating Functions
 \section{Moment Generating Functions}
 \begin{math}
-  m_x(t) = \sum_{n = 0}^{\infty} \left[ \frac{\expect{X}^n}{n!}t^n \right]
+  m_X(t) = \sum_{n = 0}^{\infty} \left[ \frac{\expect{X}^n}{n!}t^n \right]
          = \expect{\sum_{n = 0}^{\infty} \left[ \frac{(Xt)^n}{n!} \right]}
          = \expect{e^{tx}}
 \end{math} \\[2pt]
+Let \(X\) have m.g.f. \(m_X(t)\) then \(Y = a + bX\) has m.g.f:
 \begin{math}
-\text{if a RV has mgf }m_x(t)\text{ then Y=a+bX has mgf: }
-  m_y(t) = \expect{e^{tY}} 
-         = \expect{e^{t(a+bX)}} 
-         = \expect{e^{at}e^{btX}}
+  m_Y(t) = \expect{e^{tY}}
+         = \expect{e^{t(a + bX)}}
+         = \expect{e^{at} e^{btX}}
          = e^{at} \cdot \expect{e^{btX}}
-         = e^{at} \cdot m_x(bt)
+         = e^{at} \cdot m_X(bt)
 \end{math} \\[2pt]
+Let \(X\), \(Y\) be independent with m.g.f. \(m_X(t)\), \(m_Y(t)\), then \(Z = X + Y\) has m.g.f:
 \begin{math}
-  \text{X,Y independent RVs, }m_x(t),\ m_y(t)\text{ then Z=X+Y: }
-  m_z(t) = \expect{e^{tZ}} 
-         = \expect{e^{t(X+Y)}}
-         = \expect{e^{tX}e^{tY}}
-         = \expect{e^{tX}}\expect{e^{tY}}
-         = m_x(t) \cdot m_y(t)
+  m_Z(t) = \expect{e^{tZ}}
+         = \expect{e^{t(X + Y)}}
+         = \expect{e^{tX} e^{tY}}
+         = \expect{e^{tX}} \cdot \expect{e^{tY}}
+         = m_X(t) \cdot m_Y(t)
 \end{math} \\[2pt]
 
 \subsection{Geometric Distribution}
