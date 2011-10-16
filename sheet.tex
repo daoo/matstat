@@ -477,6 +477,22 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
          = \expect{\sum_{n = 0}^{\infty} \left[ \frac{(Xt)^n}{n!} \right]}
          = \expect{e^{tx}}
 \end{math} \\[2pt]
+\begin{math}
+\text{if a RV has mgf }m_x(t)\text{ then Y=a+bX has mgf: }
+  m_y(t) = \expect{e^{tY}} 
+         = \expect{e^{t(a+bX)}} 
+         = \expect{e^{at}e^{btX}}
+         = e^{at} \cdot \expect{e^{btX}}
+         = e^{at} \cdot m_x(bt)
+\end{math} \\[2pt]
+\begin{math}
+  \text{X,Y independent RVs, }m_x(t),\ m_y(t)\text{ then Z=X+Y: }
+  m_z(t) = \expect{e^{tZ}} 
+         = \expect{e^{t(X+Y)}}
+         = \expect{e^{tX}e^{tY}}
+         = \expect{e^{tX}}\expect{e^{tY}}
+         = m_x(t) \cdot m_y(t)
+\end{math} \\[2pt]
 
 \subsection{Geometric Distribution}
 \begin{math}
