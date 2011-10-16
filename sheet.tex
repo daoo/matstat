@@ -636,6 +636,7 @@ If \(X, Y\) independent
 % (end)
 % (fold) Variance
 \section{Variance}
+\subsection{Just X}
 \begin{math}
   Var(X) = \expect{X - \expect{X}}^2
          = \expect{X^2 - 2X \expect{X} + \expect{X}^2}
@@ -643,13 +644,17 @@ If \(X, Y\) independent
          = \expect{X^2} - 2 \expect{X}^2 + \expect{X}^2
          = \expect{X^2} - \expect{X}^2
 \end{math} \\[2pt]
-\begin{math} \end{math} \\[2pt]
+
+\subsection{Addition}
+If \(X, Y\) are independent,
 \begin{math}
   Var(X + Y) = \expect{(X + Y)^2} - \expect{X + Y}^2
              = \expect{X^2 + Y^2 + 2XY} - (\expect{X} + \expect{Y})^2
              = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2 \expect{XY} - 2 \expect{X} \expect{Y}
              = Var(X) + Var(Y) + 2Cov(X,Y)
 \end{math} \\[2pt]
+
+\subsection{Covariance}
 \begin{math}
   Cov(X,Y) = \expect{(X-\mu_x)(Y-\mu_y)}
            = \expect{XY-X\mu_x-Y\mu_y+\mu_x\mu_y}
