@@ -599,12 +599,34 @@ Assume j not absorbing and let A = \{chain absorbed in a\}:
 \end{math} \\[2pt]
 \begin{math} \end{math} \\[2pt]
 \begin{math}
-  Var(X + Y) = \expect{(X + Y)^2} - \expect{X + Y}^2 
+  Var(X + Y) = \expect{(X + Y)^2} - \expect{X + Y}^2
              = \expect{X^2 + Y^2 + 2XY} - (\expect{X} + \expect{Y})^2
-             = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2\expect{XY} - 2 \expect{X} \expect{Y} 
+             = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2 \expect{XY} - 2 \expect{X} \expect{Y}
              = Var(X) + Var(Y) + 2Cov(X,Y)
 \end{math} \\[2pt]
-% (end)
+\begin{math}
+  Cov(X,Y) = \expect{(X-\mu_x)(Y-\mu_y)}
+           = \expect{XY-X\mu_x-Y\mu_y+\mu_x\mu_y}
+           = \expect{XY}-\mu_y\expect{X}-\mu_x\expect{Y} + \mu_x\mu_y
+           = (\expect{X} = \mu_x)
+           = \expect{XY} - \expect{X}\expect{Y}
+\end{math} \\[2pt]
+
+\section{Other}
+Bayes:
+\begin{math}
+  P(A|B) = \frac{P(A\cap B)}{P(B)}\ and\ P(B|A)
+         = \frac{P(A\cap B)}{P(A)}
+         \Rightarrow P(A\cap B) = P(A|B)P(B) = P(B|A)P(A)
+         \Rightarrow P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+\end{math} \\[2pt]
+Marginal distribution:
+\begin{math}
+  f_x(x) = P(X = x)
+         = P(\bigcup_y \{X=x,Y=y\})
+         = \sum_y\left[P(X=x,Y=y) \right ]
+         = \sum_y \left[ f_{xy}(x,y) \right ]
+\end{math} \\[2pt]
 
 \newpage
 
