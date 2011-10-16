@@ -437,9 +437,18 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 % (end)
 % (fold) Sequences
 \section{Sequences}
+\subsection{Geometric}
+\begin{math}
+   x^0 + x^1 + \dotsb + x^k = \sum\limits_{n = 0}^k x^n = \frac{1 - x^{k + 1}}{1 - x}
+\end{math} \\[2pt]
 \begin{math}
   c^0x^0 + c^1x^1 + c^2x^2 + \dotsb = \sum\limits_{k = 0}^{\infty} (cx)^k = \frac{1}{1 - cx}
 \end{math} \\[2pt]
+\begin{math}
+  x^k + x^{k + 1} + x^{k + 2} + \dotsb = \sum\limits_{i = 0}^{\infty} x^{k + i} = \frac{x^k}{1 - x}
+\end{math} \\[2pt]
+
+\subsection{Binomial}
 \begin{math}
   \binom{n}{0} x^0 + \binom{n}{1} x^1 + \binom{n}{2} x^2 + \dotsb = \sum\limits_{k = 0}^{\infty} \binom{n}{k} x^k = (1 + x)^n
 \end{math} \\[2pt]
@@ -451,6 +460,8 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \begin{math}
   \sum_{k = 0}^{n} \binom{n}{k} x^{n-k}y^k = \sum_{k = 0}^{n} \binom{n}{k} x^ky^{n - k} = (x + y)^n
 \end{math} \\[2pt]
+
+\subsection{MacLaurin}
 \begin{math}
   \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
   = \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} = e^x
