@@ -692,7 +692,8 @@ If \(X, Y\) independent
     X = \sum_{i = 1}^n Y_i, X \sim Bin(n, p)
     \Rightarrow
     \expect{X} = \expect{\sum_{i = 1}^n Y_i}
-               = \expect{Y_1} + \dotsb + \expect{Y_n}
+               = \sum_{i = 1}^n \expect{Y_i}
+               = \sum_{i = 1}^n p
                = np
 \end{math} \\[2pt]
 \begin{math}
