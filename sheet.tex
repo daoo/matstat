@@ -472,6 +472,13 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 
 % (fold) Moment Generating Functions
 \section{Moment Generating Functions}
+\begin{math}
+  m_x(t) = \sum_{n=0}^\infty\left [\frac{\expect{X}^n}{n!}t^n \right ]
+         = \expect{\sum_{n=0}^\infty\left [\frac{(Xt)^n}{n!} \right ]}
+         = (macLaurin)
+         = \expect{e^{tx}}
+\end{math} \\[2pt]
+
 \subsection{Geometric Distribution}
 \begin{math}
   m_{x}(t) = \sum_{x = 1}^{\infty} e^{tx} (1 - p)^{x - 1}p
@@ -638,7 +645,18 @@ Marginal distribution:
          = \sum_y\left[P(X=x,Y=y) \right ]
          = \sum_y \left[ f_{xy}(x,y) \right ]
 \end{math} \\[2pt]
-
+Bernouilli:
+\begin{math}
+  \text{Y = 1 if succsses otherwise 0 with probability p and (1-p)}
+    \expect{Y} = p,\ 
+    \expect{Y^2} = p\ (1^2 = 1, 0^2 = 0),\ 
+    Var(Y) = \expect{Y}-(\expect{Y})^2 = p - p^2 = p(1-p)\
+    \sum_{i=1}^n\left[Y_i \right] = X \sim Bin(n,p) \Rightarrow 
+    \expect{X} = \expect{\sum_{i=1}^n\left[Y_i \right]} = \expect{Y_1}+...+\expect{Y_n} = np,\
+    Var(X) = Var(\sum_{i=1}^n\left[Var(Y_i) \right])
+           = \sum_{i=1}^n\left[p(1-p) \right]
+           = np(1-p)
+\end{math} \\[2pt]
 \newpage
 
 \end{multicols}
