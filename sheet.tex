@@ -548,9 +548,8 @@ Only if \(t < \lambda\)
 \end{math} \\[2pt]
 
 \subsection{Cherbychev}
-Use Markov's Inequality:
 \begin{math}
-  P(|X-\mu| \geq \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \leq \frac{E|X-\mu|^2}{\varepsilon^2}
+  P(|X-\mu| \geq \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \leq \frac{\expect{|X-\mu|}^2}{\varepsilon^2}
                               = \frac{Var(X)}{\varepsilon^2}
 \end{math} \\[2pt]
 % (end)
