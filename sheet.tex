@@ -655,10 +655,9 @@ If \(X, Y\) independent
 
 \subsection{Covariance}
 \begin{math}
-  Cov(X,Y) = \expect{(X-\mu_x)(Y-\mu_y)}
-           = \expect{XY-X\mu_x-Y\mu_y+\mu_x\mu_y}
-           = \expect{XY}-\mu_y\expect{X}-\mu_x\expect{Y} + \mu_x\mu_y
-           = (\expect{X} = \mu_x)
+  Cov(X,Y) = \expect{(X - \expect{X})(Y - \expect{Y})}
+           = \expect{XY - X\expect{Y} - Y\expect{X} + \expect{X}\expect{Y}}
+           = \expect{XY} - \expect{X}\expect{Y} - \expect{Y}\expect{X} + \expect{X}\expect{Y}
            = \expect{XY} - \expect{X}\expect{Y}
 \end{math} \\[2pt]
 % (end)
