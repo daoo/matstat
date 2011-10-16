@@ -16,6 +16,7 @@
 \newcommand{\expect}[1]{\mathrm{E} \left[ {#1} \right]}
 \newcommand{\cidist}[1]{{#1}_{\frac{\alpha}{2}}}
 \newcommand{\pisigma}[0]{\frac{1}{\sqrt{2 \pi \sigma^2}}}
+\newcommand{\di}[1]{\, d{#1}}
 
 \pdfinfo{
   /Title (sheet.pdf)
@@ -524,10 +525,10 @@ Only if \(t < \lambda\)
 \section{Inequalities}
 \subsection{Markov}
 \begin{math}
-  \expect{X} = \int_0^{\infty}{xf_x(x)dx}
-             = \int_0^t{xf_x(x)dx} + \int_t^{\infty}{xf_x(x)dx} \ge 0 + \int_t^\infty{tf_x(x)dx}
-             = t\int_t^\infty{f_x(x)dx}
-             = tP(X \ge t) \Rightarrow \frac{E[X]}{t} \ge P(X \ge t)
+  \expect{X} = \int_0^{\infty} xf(x) \di{x}
+             = \int_0^t xf(x) \di{x} + \int_t^{\infty} xf(x) \di{x} \geq 0 + \int_t^{\infty} tf(x) \di{x}
+             = t\int_t^{\infty} f(x) \di{x}
+             = tP(X \geq t) \Rightarrow \frac{E[X]}{t} \geq P(X \geq t)
 \end{math} \\[2pt]
 
 \subsection{Cherbychev}
