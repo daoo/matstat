@@ -308,6 +308,7 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
   \bar{X} = \frac{1}{n} \sum\limits_{i = 1}^n X_i,
   S^2 = \frac{1}{n - 1} \sum\limits_{i=1}^n (X_i - \bar{X})^2
 \end{math} \\[2pt]
+
 \subsection{Central Limit Theorem}
 \begin{math}
   \text{If } \expect{X} < \infty \text{ and } Var(X) < \infty \text{ then}
@@ -315,21 +316,23 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
 \begin{math}
   \bar{X} \sim N(\mu, \frac{\sigma^2}{n}) \Rightarrow \frac{\bar{X} - \mu}{\frac{\sigma^2}{n}} \sim N(0, 1)
 \end{math} \\[2pt]
+
 \subsection{Confidence Interval}
 \begin{math}
-  \mu \rightarrow
-  Z \sim N(0, 1),
+  \mu \rightarrow Z \sim N(0, 1), \
  \bar{X} \pm \cidist{Z} \cdot \frac{\sigma}{\sqrt{n}}
 \end{math} \\[2pt]
 \begin{math}
-  \mu \rightarrow
-  T \sim t(n - 1),
+  \mu \rightarrow T \sim t(n - 1), \
  \bar{X} \pm \cidist{T} \cdot \frac{S}{\sqrt{n}}
 \end{math} \\[2pt]
 \begin{math}
-  \sigma^2 \rightarrow
-  C \sim \chi^2(n - 1),
+  \sigma^2 \rightarrow C \sim \chi^2(n - 1), \
   \left[ \frac{(n - 1)S^2}{C_{\frac{\alpha}{2}}}, \frac{(n - 1)S^2}{C_{1 - \frac{\alpha}{2}}} \right]
+\end{math} \\[2pt]
+\begin{math}
+  p \rightarrow Z \sim N(0, 1), \
+  \hat{p} \pm \cidist{Z} \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}
 \end{math} \\[2pt]
 % (end)
 % (fold) Markov Chains
