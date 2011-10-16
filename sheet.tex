@@ -451,6 +451,10 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
 \begin{math}
   \sum_{k = 0}^{n} \binom{n}{k} x^{n-k}y^k = \sum_{k = 0}^{n} \binom{n}{k} x^ky^{n - k} = (x + y)^n
 \end{math} \\[2pt]
+\begin{math}
+  \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsb
+  = \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} = e^x
+\end{math} \\[2pt]
 % (end)
 
 \newpage
@@ -496,7 +500,6 @@ Only if \(t < \lambda\)
 \begin{math}
   m_{x}(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
            = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
-           = (use\ \sum_{x=0}^{\infty}{\frac{\lambda^x}{x!}} = e^\lambda)
            = e^{\lambda(e^t-1)}
 \end{math} \\[2pt]
 % (end)
