@@ -533,6 +533,15 @@ Using that we can construct \(1 - \alpha\) CI intervals.
 % (end)
 % (fold) Markov Chains
 \section{Markov Chains}
+If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\bar{u}P\):
+\begin{math}
+  P(x_{n+1}=j)
+           = \sum_i \left[ P(x_n=i) \cdot P(x_{n+1}=j|x_n=i) \right]
+           = \sum_i \left[ u_iP_{ij} \right]
+           = [\text{matrix} \cdot \text{vector}]
+           = \bar{u}Pj
+\end{math} \\[2pt]
+
 \subsection{Absorbing Chain}
 Assume j not absorbing and let A = \{chain absorbed in a\}:
 \begin{math}
@@ -544,14 +553,7 @@ Assume j not absorbing and let A = \{chain absorbed in a\}:
       = \sum_k \left[ P(A|x_1=k) \cdot P_{jk} \right]
       = \sum_k q_kP_{ij}
 \end{math} \\[2pt]
-If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\bar{u}P\):
-\begin{math}
-  P(x_{n+1}=j)
-           = \sum_i \left[ P(x_n=i) \cdot P(x_{n+1}=j|x_n=i) \right]
-           = \sum_i \left[ u_iP_{ij} \right]
-           = [\text{matrix} \cdot \text{vector}]
-           = \bar{u}Pj
-\end{math} \\[2pt]
+
 % (end)
 % (fold) Expectation and Variance
 \section{Expectation and Variance}
@@ -596,6 +598,29 @@ If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\ba
              = \expect{X^2 + Y^2 + 2XY} - (\expect{X} + \expect{Y})^2
              = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2\expect{XY} - 2 \expect{X} \expect{Y} 
              = Var(X) + Var(Y) + 2Cov(X,Y)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X,Y) = \expect{(X-\mu_x)(Y-\mu_y)}
+           = \expect{XY-X\mu_x-Y\mu_y+\mu_x\mu_y} 
+           = \expect{XY}-\mu_y\expect{X}-\mu_x\expect{Y} + \mu_x\mu_y
+           = (\expect{X} = \mu_x)
+           = \expect{XY} - \expect{X}\expect{Y}
+\end{math} \\[2pt]
+
+\section{Other}
+\begin{math}
+\text{Bayer's:}
+  P(A|B) = \frac{P(A\cap B)}{P(B)}\ and\ P(B|A)
+         = \frac{P(A\cap B)}{P(A)} 
+         \Rightarrow P(A\cap B) = P(A|B)P(B) = P(B|A)P(A)
+         \Rightarrow P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+\end{math} \\[2pt]
+\begin{math}
+\text{marginal distribution:}
+  f_x(x) = P(X = x) 
+         = P(\bigcup_y \{X=x,Y=y\})
+         = \sum_y\left[P(X=x,Y=y) \right ]
+         = \sum_y \left[ f_{xy}(x,y) \right ]
 \end{math} \\[2pt]
 % (end)
 
