@@ -322,10 +322,14 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
 % (fold) Markov Chains
 \section{Markov Chains}
 \begin{math}
-  P(X_{n+1} = x | X_1 = x_1, X_2 = x_2, \dotsc, X_n = x_n) = P(X_{n + 1} = x | X_n = x_n)
+  P(X_{n + 1} = i \, | \, X_n = a_n, X_{n - 1} = a_{n - 1}, \dotsc, X_0 = a_0)
+  = P(X_{n + 1} = i \, | \, X_n = a_n)
 \end{math} \\[2pt]
 \begin{math}
-  p_{ij}^{(n)} = P(X_n = j | X_0 = i)
+  p_{ij}^{(n)} = P(X_n = j \, | \, X_0 = i)
+\end{math} \\[2pt]
+\begin{math}
+  p_{ij} = P(X_1 = j \, | \, X_0 = i)
 \end{math} \\[2pt]
 \begin{math}
   \text{State absorbing if }
@@ -575,24 +579,22 @@ We can then construct a \(1 - \alpha\) level CI interval:
 % (end)
 % (fold) Markov Chains
 \section{Markov Chains}
-If \(x_n\) has distribution \(\bar{u}\), then \(x_{n+1}\) has distribution \(\bar{u}P\):
+If \(X_n\) has distribution \(u\) then \(X_{n + 1}\) has distribution \(uP\): \\
 \begin{math}
-  P(x_{n+1}=j)
-           = \sum_i \left[ P(x_n=i) \cdot P(x_{n+1}=j|x_n=i) \right]
-           = \sum_i \left[ u_iP_{ij} \right]
-           = [\text{matrix} \cdot \text{vector}]
-           = \bar{u}Pj
+  P(X_{n+1} = j) = \sum_i \left[ P(X_n = i) \cdot P(X_{n + 1}=j \,|\, X_n = i) \right]
+                 = \sum_i \left[ u_iP_{ij} \right]
+                 = (uP)_j
 \end{math} \\[2pt]
 
 \subsection{Absorbing Chain}
 Assume j not absorbing and let A = \{chain absorbed in a\}:
 \begin{math}
-  q_j = P(A|x_0 = j)
-      = \frac{P(A \cap (x_0 = k))}{P(x_0 = j)}
-      = \frac{\sum_{k}{P(A \cap (x_0 = j) \cap (x_1 = k))}}{P(x_0 = j)}
-      = \sum_k{\left[P(A|x_0=j \cap x_1 = k) \cdot \frac{P(X_0 = j \cap x_1 = k)}{P(X_0 = j)} \right ]}
-      = \sum_k \left[ P(A|x_1 = k) \cdot P(x_1 = k | x_0 = j) \right]
-      = \sum_k \left[ P(A|x_1=k) \cdot P_{jk} \right]
+  q_j = P(A \,|\, X_0 = j)
+      = \frac{P(A \cap (X_0 = j))}{P(X_0 = j)}
+      = \frac{\sum_k P(A \cap (X_0 = j) \cap (X_1 = k))}{P(X_0 = j)}
+      = \sum_k \left[ P(A \,|\, X_0 = j \cap X_1 = k) \cdot \frac{P(X_0 = j \cap X_1 = k)}{P(X_0 = j)} \right]
+      = \sum_k \left[ P(A \,|\, X_1 = k)              \cdot P(X_1 = k \,|\, X_0 = j) \right]
+      = \sum_k \left[ P(A \,|\, X_1 = k)              \cdot P_{jk} \right]
       = \sum_k q_kP_{ij}
 \end{math} \\[2pt]
 % (end)
