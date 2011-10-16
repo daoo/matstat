@@ -711,6 +711,17 @@ If \(X, Y\) independent
            = \sum_{i = 1}^n p(1 - p)
            = np(1 - p)
 \end{math} \\[2pt]
+
+\subsection{Estimators}
+\begin{math}
+  S^2 = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n \left[ X_i - \bar{X} \right]^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - 2X_i\bar{X} + \bar{X}^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - 2\sum\limits_{i=1}^n X_i\bar{X} + \sum\limits_{i=1}^n \bar{X}^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - 2\bar{X} \sum\limits_{i=1}^n X_i + n\bar{X}^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - \frac{2}{n} \left[ \sum\limits_{i=1}^n X_i \right]^2 + \frac{n}{n^2} \left[ \sum\limits_{i=1}^n X_i \right]^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - \frac{2}{n} \left[ \sum\limits_{i=1}^n X_i \right]^2 + \frac{1}{n} \left[ \sum\limits_{i=1}^n X_i \right]^2 \right]
+      = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - \frac{1}{n} \left[ \sum\limits_{i=i}^n X_i \right]^2 \right]
+\end{math} \\[2pt]
 % (end)
 
 \section{Hax}
