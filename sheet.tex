@@ -645,6 +645,15 @@ Assume j not absorbing and let A = \{chain absorbed in a\}:
            = (\expect{X} = \mu_x)
            = \expect{XY} - \expect{X}\expect{Y}
 \end{math} \\[2pt]
+\begin{math}
+  S^2 = \frac{1}{n-1}\sum_{i=1}^n\left[(X_i - \bar{X})^2\right]
+      = \frac{1}{n-1}\sum_{i=1}^n\left[ X_i^2 - 2X_i\bar{X} + \bar{X}^2\right]
+      = \frac{1}{n-1}\left(\sum_{i=1}^n\left[X_i^2 \right] - 2\sum_{i=1}^n\left[X_i\bar{X}\right] + \sum_{i=1}^n\left[\bar{X}\right]\right)
+      = \frac{1}{n-1}\left(\sum_{i=1}^n\left[X_i^2 \right] - 2\sum_{i=1}^n\left[X_i\bar{X}\right] + n\bar{X}\right)
+      = \frac{1}{n-1}\left(\sum_{i=1}^n\left[X_i^2 \right] - \frac{2}{n}\sum_{i=1}^n\left[X_i \right]\cdot\sum_{i=1}^n\left[X_i \right] + \frac{n}{n^2}\left(\sum_{i=1}^n\left[X_i\right]\right)^2\right)
+      = \frac{1}{n-1}\left(\sum_{i=1}^n\left[X_i^2 \right] - \frac{2}{n}\left( \sum_{i=1}^n\left[X_i \right]\right)^2 + \frac{1}{n}\left( \sum_{i=1}^n\left[X_i \right]\right)^2
+      = \frac{1}{n-1}\left(\sum_{i=1}^n\left[X_i^2 \right] - \frac{1}{n}\left(\sum_{i=i}^n \left[X_i\right] \right )^2 \right )
+\end{math\ \\[2pt]
 % (end)
 % (fold) Other
 \section{Other}
