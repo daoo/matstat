@@ -76,9 +76,7 @@
 \section{Set Theory}
 Let \(P\) be a partition of \(X\), then \\
 \begin{math}
-  \bigcup P = X
-\end{math} \\[2pt]
-\begin{math}
+  \bigcup P = X, \
   A \cap B = \emptyset \text{ if } A \in P, B \in P, A \neq B
 \end{math} \\[2pt]
 % (end)
@@ -184,22 +182,14 @@ Total Probability Law:
   E \left[ \frac{X - \mu}{\sigma} \right] = 0, Var \left( \frac{X - \mu}{\sigma} \right) = 1
 \end{math}
 % (end)
-% (fold) Discrete Random Variables
-\subsection{Discrete Random Variables}
-\begin{math}
-  f(x) = F(x) - F(x - 1)
-\end{math}
-% (end)
 % (fold) Continuous Random Variables
 \subsection{Continuous Random Variables}
 \begin{math}
   P[X = a] = P[X = b] = 0
   \Rightarrow
-  P[a \leq X \leq b] = P[a < X < b]
-\end{math} \\[2pt]
-\begin{math}
+  P[a \leq X \leq b] = P[a < X < b] ,
   f(x) = F'(x)
-\end{math}
+\end{math} \\[2pt]
 % (end)
 % (fold) Multivariate Random Variables
 \subsection{Multivariate Random Variables}
@@ -243,9 +233,11 @@ Total Probability Law:
   Var(X + Y) = Var(X) + Var(Y)
 \end{math} \\[2pt]
 \begin{math}
+  \text{independent } \Rightarrow Cov(X, Y) = 0
+\end{math} \\[2pt]
+\begin{math}
   Cov(X, Y) = 0 \Leftrightarrow Corr(X, Y) = 0
 \end{math} \\[2pt]
-Note that \(Cov(X, Y) = 0\) does not imply independence
 % (end)
 % (end)
 % (fold) Distributions
@@ -373,6 +365,7 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
   p_1 - p_2 \rightarrow
   \pm \cidist{Z} \sqrt{\frac{p_1(1 - p_1)}{n_1} + \frac{p_2(1 - p_2)}{n_2}}
 \end{math} \\[2pt]
+For one sided confidence intervals, use \(Z_{\alpha}\)
 % (end)
 % (fold) Markov Chains
 \section{Markov Chains}
