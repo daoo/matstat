@@ -760,6 +760,13 @@ If \(X, Y\) independent
 \end{math} \\[2pt]
 
 \subsection{Estimators}
+\subsubsection{Unbiased}
+\begin{math}
+  \hat{\theta} \text{ is unbiased if } \expect{\hat{\theta}} = \theta,
+  \bar{X} = \frac{1}{n} \sum_{i = 1}^n X_i,
+  \expect{\bar{X}} = \frac{1}{n} \sum_{i = 1}^n \expect{X_i} = \mu
+\end{math} \\[2pt]
+\subsubsection{Variance}
 \begin{math}
   S^2 = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n \left[ X_i - \bar{X} \right]^2 \right]
       = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - 2X_i\bar{X} + \bar{X}^2 \right]
