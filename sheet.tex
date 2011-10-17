@@ -428,13 +428,6 @@ Decide \(H_A\), \(H_A\) True \(\Rightarrow\) OK \\
   a_n = \frac{A^{(n)}(0)}{n!}
 \end{math} \\[2pt]
 
-\subsection{Common Sequences}
-\begin{math}
-  a_n = c^n \rightarrow \frac{1}{1 - cx},
-  a_k = \binom{n}{k} \rightarrow (1 + x)^n,
-  a_n = \binom{k + n}{k} \rightarrow \frac{1}{(1 - x)^{k + 1}}
-\end{math} \\[2pt]
-
 \subsection{Common Operations}
 \begin{math}
   A(x) + B(x) \rightarrow \left\{ a_n + b_n \right\}_{n = 0}^{\infty}
@@ -761,7 +754,7 @@ If \(X, Y\) independent
   \expect{\bar{X}} = \frac{1}{n} \sum_{i = 1}^n \expect{X_i} = \mu
 \end{math} \\[2pt]
 \subsubsection{Variance}
-\(S^2\) is also unbiased, proof for the computational formula: \\
+Proof for the computational formula: \\
 \begin{math}
   S^2 = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n \left[ X_i - \bar{X} \right]^2 \right]
       = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - 2X_i\bar{X} + \bar{X}^2 \right]
@@ -771,6 +764,7 @@ If \(X, Y\) independent
       = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - \frac{2}{n} \left[ \sum\limits_{i=1}^n X_i \right]^2 + \frac{1}{n} \left[ \sum\limits_{i=1}^n X_i \right]^2 \right]
       = \frac{1}{n-1} \left[ \sum\limits_{i=1}^n X_i^2 - \frac{1}{n} \left[ \sum\limits_{i=i}^n X_i \right]^2 \right]
 \end{math} \\[2pt]
+Note that \(S^2\) is also unbiased while \(S\) is biased, because math.
 % (end)
 
 \newpage
