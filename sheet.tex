@@ -380,20 +380,24 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
 \begin{math}
   p_{ij} = P(X_1 = j \, | \, X_0 = i)
 \end{math} \\[2pt]
+
+\subsection{Absorption}
+State absorbing if
 \begin{math}
-  \text{State absorbing if }
   p_{ii} = 1 \text{ and } p_{ij} = 0 \text{ for } i \neq j
 \end{math} \\[2pt]
+\(j\) is the starting state, \(a\) is the absorbing state, the probability \(q_j\) is\\
 \begin{math}
-  \text{Probability} = q_j =
+  q_j =
   \begin{cases}
     1                       & j = a \\
-    0                       & j \neq a \\
+    0                       & j \neq a \text{ and } j \text{ absorbing} \\
     \sum_k P_{jk} \cdot q_k & \text{otherwise} \\
   \end{cases}
 \end{math}
+Number of steps to absorption, \(m_j\), is
 \begin{math}
-  \text{Steps} = m_j =
+  m_j =
   \begin{cases}
     0                       & j \text{ absorbing} \\
     \sum_k P_{jk} \cdot m_k & \text{otherwise} \\
