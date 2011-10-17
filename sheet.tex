@@ -14,7 +14,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{ifthen}
-\usepackage{mathtools}  
+\usepackage{mathtools}
 \usepackage{multicol}
 
 \newcommand{\expect}[1]{\mathrm{E} \left[ {#1} \right]}
@@ -136,13 +136,13 @@ A, B independent if
 \begin{math}
   P(A \cap B) = P(A) \cdot P(B)
 \end{math} \\[2pt]
-Bayes: 
+Bayes:
 \begin{math}
   P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 \end{math} \\[2pt]
 Total Probability Law:
 \begin{math}
-  P(B) = \sum_{i} \left[P(B|A_i) \cdot P(A_i)\right]
+  P(B) = \sum_i \left[P(B|A_i) \cdot P(A_i)\right]
 \end{math} \\[2pt]
 % (end)
 % (fold) Random Variables
@@ -172,10 +172,10 @@ Total Probability Law:
   Var(X) = \sum_{all \, x} f(x) (x - \mu)^2
 \end{math} \\[2pt]
 \begin{math}
-  Var(X) = \expect{X^2} - (\expect{X})^2 
+  Var(X) = \expect{X^2} - (\expect{X})^2
 \end{math} \\[2pt]
 \begin{math}
-  Var(a) = 0, Var(aX) = a^2 Var(X) 
+  Var(a) = 0, Var(aX) = a^2 Var(X)
 \end{math} \\[2pt]
 \begin{math}
   Var(X + Y) = Var(X) + Var(Y) + 2Cov(X, Y)
@@ -193,7 +193,7 @@ Total Probability Law:
 % (fold) Continuous Random Variables
 \subsection{Continuous Random Variables}
 \begin{math}
-  P[X = a] = P[X = b] = 0 
+  P[X = a] = P[X = b] = 0
   \Rightarrow
   P[a \leq X \leq b] = P[a < X < b]
 \end{math} \\[2pt]
@@ -207,10 +207,10 @@ Total Probability Law:
   f_{XY}(x, y) = P[X = x \text{ and } Y = y]
 \end{math} \\[2pt]
 \begin{math}
-  f_{X}(x) = \sum_{all \, y}{f_{XY}(x,y)}
+  f_X(x) = \sum_{all \, y}{f_{XY}(x,y)}
 \end{math} \\[2pt]
 \begin{math}
-  f_{Y}(y) = \sum_{all \, x}{f_{XY}(x,y)}
+  f_Y(y) = \sum_{all \, x}{f_{XY}(x,y)}
 \end{math} \\[4pt]
 \begin{math}
   Cov(X, Y) = \sigma_{XY} = \expect{(X - \expect{X}) \cdot (Y - \expect{Y})} = \expect{XY} - \expect{X} \cdot \expect{Y}
@@ -523,7 +523,7 @@ Let \(X, Y\) be independent with m.g.f. \(m_X(t), m_Y(t)\) then \(Z = X + Y\) ha
   = \frac{1}{(1 - x)^{k + 1}}
 \end{math} \\[2pt]
 \begin{math}
-  \sum_{k = 0}^{n} \binom{n}{k} x^{n-k}y^k = \sum_{k = 0}^{n} \binom{n}{k} x^ky^{n - k} = (x + y)^n
+  \sum_{k = 0}^n \binom{n}{k} x^{n-k}y^k = \sum_{k = 0}^n \binom{n}{k} x^ky^{n - k} = (x + y)^n
 \end{math} \\[2pt]
 
 \subsection{MacLaurin}
@@ -561,44 +561,44 @@ Let \(X\), \(Y\) be independent with m.g.f. \(m_X(t)\), \(m_Y(t)\), then \(Z = X
 
 \subsection{Geometric Distribution}
 \begin{math}
-  m_{x}(t) = \sum_{x = 1}^{\infty} e^{tx} (1 - p)^{x - 1}p
-           = pe^t \sum_{x = 1}^{\infty}{e^{t(x - 1)}(1 - p)^{x - 1}}
-           = pe^t \sum_{x = 0}^{\infty}{e^{tx}(1 - p)^x}
-           = pe^t \sum_{x = 0}^{\infty}{(e^t(1 - p))^x}
-           = \frac{pe^t}{1 - e^t(1 - p)}
+  m_X(t) = \sum_{x = 1}^{\infty} e^{tx} (1 - p)^{x - 1}p
+         = pe^t \sum_{x = 1}^{\infty}{e^{t(x - 1)}(1 - p)^{x - 1}}
+         = pe^t \sum_{x = 0}^{\infty}{e^{tx}(1 - p)^x}
+         = pe^t \sum_{x = 0}^{\infty}{(e^t(1 - p))^x}
+         = \frac{pe^t}{1 - e^t(1 - p)}
 \end{math} \\[2pt]
 
 \subsection{Binomial Distribution}
 \begin{math}
-  m_{x}(t) = \sum_{x=0}^{n}{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
-           = \sum_{x=0}^{n}{\binom{n}{x}(pe^t)^x(1-p)^{n-x}}
-           = (pe^t + (1 - p))^n = (p(e^t-1)+1)^n
+  m_X(t) = \sum_{x=0}^n{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
+         = \sum_{x=0}^n{\binom{n}{x}(pe^t)^x(1-p)^{n-x}}
+         = (pe^t + (1 - p))^n = (p(e^t-1)+1)^n
 \end{math} \\[2pt]
 
 \subsection{Exponential Distribution}
 Only if \(t < \lambda\)
 \begin{math}
-  m_{x}(t) = \int_{0}^{\infty}{e^{tx} \lambda e^{-\lambda x}dx}
-           = \lambda \int_{0}^{\infty}{e^{x(t-\lambda)}dx}
-           = \lambda \left[\frac{e^{x(t-\lambda)}}{t-\lambda}\right]_{0}^{\infty}
-           = \lambda \left(0-\frac{1}{t-\lambda}\right)
-           = \frac{\lambda}{\lambda - t}
+  m_X(t) = \int_0^{\infty}{e^{tx} \lambda e^{-\lambda x}dx}
+         = \lambda \int_0^{\infty}{e^{x(t-\lambda)}dx}
+         = \lambda \left[\frac{e^{x(t-\lambda)}}{t-\lambda}\right]_0^{\infty}
+         = \lambda \left(0-\frac{1}{t-\lambda}\right)
+         = \frac{\lambda}{\lambda - t}
 \end{math} \\[2pt]
 
 \begin{math}
-  F_{x}(x) = P(X \le x) 
-           = \int_0^x{f_{x}(s)ds} 
-           = \int_0^x{\lambda e^{-\lambda s}ds} 
-           = \lambda \left[-\frac{1}{\lambda}e^{-\lambda s} \right ]_0^x 
-           = (-1)(e^{-\lambda x} -1) 
-           = 1 - e^{-\lambda x}
+  F_X(x) = P(X \le x)
+         = \int_0^x{f_X(s)ds}
+         = \int_0^x{\lambda e^{-\lambda s}ds}
+         = \lambda \left[-\frac{1}{\lambda}e^{-\lambda s} \right ]_0^x
+         = (-1)(e^{-\lambda x} -1)
+         = 1 - e^{-\lambda x}
 \end{math} \\[2pt]
 
 \subsection{Poisson Distribution}
 \begin{math}
-  m_{x}(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
-           = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
-           = e^{\lambda(e^t-1)}
+  m_X(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
+         = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
+         = e^{\lambda(e^t-1)}
 \end{math} \\[2pt]
 % (end)
 % (fold) Inequalitites
@@ -685,7 +685,7 @@ If \(X, Y\) independent
                    \sum_{j, k} \left[ y_k \cdot P(X = x_j,Y = y_k) \right]
                  = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_k) \right] \right] +
                    \sum_k \left[ y_k \sum_j \left[ P(X = x_j, Y = y_k) \right] \right]
-                 = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right] 
+                 = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right]
                  = \expect{X} + \expect{Y}
 \end{math} \\[2pt]
 % (end)
