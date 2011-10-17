@@ -329,20 +329,27 @@ Fixed number, \(n\), of Bernoulli trials, independent trials with equal probabil
 
 \subsection{Confidence Interval}
 \begin{math}
-  \mu \rightarrow Z \sim N(0, 1), \
+  Z \sim N(0, 1), T \sim t(n - 1), C \sim \chi^2(n - 1)
+\end{math} \\[2pt]
+\begin{math}
+  \mu \rightarrow
  \bar{X} \pm \cidist{Z} \cdot \frac{\sigma}{\sqrt{n}}
 \end{math} \\[2pt]
 \begin{math}
-  \mu \rightarrow T \sim t(n - 1), \
+  \mu \rightarrow
  \bar{X} \pm \cidist{T} \cdot \frac{S}{\sqrt{n}}
 \end{math} \\[2pt]
 \begin{math}
-  \sigma^2 \rightarrow C \sim \chi^2(n - 1), \
+  \sigma^2 \rightarrow
   \left[ \frac{(n - 1)S^2}{C_{\frac{\alpha}{2}}}, \frac{(n - 1)S^2}{C_{1 - \frac{\alpha}{2}}} \right]
 \end{math} \\[2pt]
 \begin{math}
-  p \rightarrow Z \sim N(0, 1), \
-  \hat{p} \pm \cidist{Z} \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}
+  p \rightarrow
+  \hat{p} \pm \cidist{Z} \cdot \sqrt{\frac{p(1 - p)}{n}}
+\end{math} \\[2pt]
+\begin{math}
+  p_1 - p_2 \rightarrow
+  \pm \cidist{Z} \sqrt{\frac{p_1(1 - p_1)}{n_1} + \frac{p_2(1 - p_2)}{n_2}}
 \end{math} \\[2pt]
 % (end)
 % (fold) Markov Chains
