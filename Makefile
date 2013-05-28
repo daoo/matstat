@@ -1,5 +1,6 @@
 outdir   = build
 pdflatex = pdflatex -file-line-error -halt-on-error -output-directory=build
+headref  = $(shell git rev-parse --short HEAD)
 
 all: build/sheet.pdf
 
@@ -18,7 +19,7 @@ build/dist.pdf: build/dist.tex
 
 build/dist.tex: sheet.tex
 	cp sheet.tex build/dist.tex
-	./update-revision.sh
+	sed -i "s/rev DEVELOPMENT/rev $(headref)/" build/dist.tex
 
 clean:
 	rm -rf build/*.*
