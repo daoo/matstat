@@ -1,0 +1,18 @@
+\section{Inequalities}
+\subsection{Markov's Inequality}
+\begin{math}
+  X > 0 \text{ and } t > 0 \Rightarrow
+  P(X \geq t) \leq \frac{\expect{X}}{t}
+\end{math} \\[2pt]
+
+\subsection{Chebyshev's Inequality}
+\begin{math}
+  \varepsilon > 0,
+  P( \left| X - \mu \right| \geq \varepsilon ) \leq \frac{Var(X)}{\varepsilon^2}
+\end{math} \\[2pt]
+
+\subsection{Law of Large Numbers}
+Let \(\bar{X}_n = \frac{1}{n}(X_1 + \dotsb + X_n)\), and \(|\expect{X}| < \infty\), \(Var(X) < \infty\), then \\
+\begin{math}
+  \lim\limits_{n \rightarrow \infty} P( \left| \bar{X}_n - \mu \right| < \varepsilon ) = 1
+\end{math} \\[2pt]

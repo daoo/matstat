@@ -1,0 +1,34 @@
+\section{Markov Chains}
+\begin{math}
+  P(X_{n + 1} = i \, | \, X_n = a_n, X_{n - 1} = a_{n - 1}, \dotsc, X_0 = a_0)
+  = P(X_{n + 1} = i \, | \, X_n = a_n)
+\end{math} \\[2pt]
+\begin{math}
+  p_{ij}^{(n)} = P(X_n = j \, | \, X_0 = i)
+\end{math} \\[2pt]
+\begin{math}
+  p_{ij} = P(X_1 = j \, | \, X_0 = i)
+\end{math} \\[2pt]
+
+\subsection{Absorption}
+State absorbing if
+\begin{math}
+  p_{ii} = 1 \text{ and } p_{ij} = 0 \text{ for } i \neq j
+\end{math} \\[2pt]
+\(j\) is the starting state, \(a\) is the absorbing state, the probability \(q_j\) is\\
+\begin{math}
+  q_j =
+  \begin{cases}
+    1                       & j = a \\
+    0                       & j \neq a \text{ and } j \text{ absorbing} \\
+    \sum_k P_{jk} \cdot q_k & \text{otherwise} \\
+  \end{cases}
+\end{math}
+Number of steps to absorption, \(m_j\), is
+\begin{math}
+  m_j =
+  \begin{cases}
+    0                       & j \text{ absorbing} \\
+    \sum_k P_{jk} \cdot m_k & \text{otherwise} \\
+  \end{cases}
+\end{math}

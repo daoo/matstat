@@ -1,0 +1,64 @@
+\section{Moment Generating Functions}
+\begin{math}
+  m_X(t) = \sum_{n = 0}^{\infty} \left[ \frac{\expect{X}^n}{n!}t^n \right]
+         = \expect{\sum_{n = 0}^{\infty} \left[ \frac{(Xt)^n}{n!} \right]}
+         = \expect{e^{tx}}
+\end{math} \\[6pt]
+Let \(X\) have m.g.f. \(m_X(t)\) then \(Y = a + bX\) has m.g.f:
+\begin{math}
+  m_Y(t) = \expect{e^{tY}}
+         = \expect{e^{t(a + bX)}}
+         = \expect{e^{at} e^{btX}}
+         = e^{at} \cdot \expect{e^{btX}}
+         = e^{at} \cdot m_X(bt)
+\end{math} \\[6pt]
+Let \(X\), \(Y\) be independent with m.g.f. \(m_X(t)\), \(m_Y(t)\), then \(Z = X + Y\) has m.g.f:
+\begin{math}
+  m_Z(t) = \expect{e^{tZ}}
+         = \expect{e^{t(X + Y)}}
+         = \expect{e^{tX} e^{tY}}
+         = \expect{e^{tX}} \cdot \expect{e^{tY}}
+         = m_X(t) \cdot m_Y(t)
+\end{math} \\[2pt]
+
+\subsection{Geometric Distribution}
+\begin{math}
+  m_X(t) = \sum_{x = 1}^{\infty} e^{tx} (1 - p)^{x - 1}p
+         = pe^t \sum_{x = 1}^{\infty}{e^{t(x - 1)}(1 - p)^{x - 1}}
+         = pe^t \sum_{x = 0}^{\infty}{e^{tx}(1 - p)^x}
+         = pe^t \sum_{x = 0}^{\infty}{(e^t(1 - p))^x}
+         = \frac{pe^t}{1 - e^t(1 - p)}
+\end{math} \\[2pt]
+
+\subsection{Binomial Distribution}
+\begin{math}
+  m_X(t) = \sum_{x=0}^n{e^{tx}\binom{n}{x}p^x(1-p)^{n-x}}
+         = \sum_{x=0}^n{\binom{n}{x}(pe^t)^x(1-p)^{n-x}}
+         = (pe^t + (1 - p))^n = (p(e^t-1)+1)^n
+\end{math} \\[2pt]
+
+\subsection{Exponential Distribution}
+Only if \(t < \lambda\)
+\begin{math}
+  m_X(t) = \int_0^{\infty}{e^{tx} \lambda e^{-\lambda x}dx}
+         = \lambda \int_0^{\infty}{e^{x(t-\lambda)}dx}
+         = \lambda \left[\frac{e^{x(t-\lambda)}}{t-\lambda}\right]_0^{\infty}
+         = \lambda \left(0-\frac{1}{t-\lambda}\right)
+         = \frac{\lambda}{\lambda - t}
+\end{math} \\[2pt]
+
+\begin{math}
+  F_X(x) = P(X \le x)
+         = \int_0^x{f_X(s)ds}
+         = \int_0^x{\lambda e^{-\lambda s}ds}
+         = \lambda \left[-\frac{1}{\lambda}e^{-\lambda s} \right ]_0^x
+         = (-1)(e^{-\lambda x} -1)
+         = 1 - e^{-\lambda x}
+\end{math} \\[2pt]
+
+\subsection{Poisson Distribution}
+\begin{math}
+  m_X(t) = \sum_{x=0}^{\infty}{e^{tx}}\frac{\lambda^x e^{-\lambda}}{x!}
+         = e^{-\lambda}\sum_{x = 0}^{\infty}{\frac{(e^t\lambda)^x}{x!}}
+         = e^{\lambda(e^t-1)}
+\end{math} \\[2pt]

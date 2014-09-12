@@ -1,0 +1,19 @@
+\section{Markov Chains}
+If \(X_n\) has distribution \(u\) then \(X_{n + 1}\) has distribution \(uP\): \\
+\begin{math}
+  P(X_{n+1} = j) = \sum_i \left[ P(X_n = i) \cdot P(X_{n + 1}=j \,|\, X_n = i) \right]
+                 = \sum_i \left[ u_iP_{ij} \right]
+                 = (uP)_j
+\end{math} \\[2pt]
+
+\subsection{Absorbing Chain}
+Assume j not absorbing and let A = \{chain absorbed in a\}:
+\begin{math}
+  q_j = P(A \,|\, X_0 = j)
+      = \frac{P(A \cap (X_0 = j))}{P(X_0 = j)}
+      = \frac{\sum_k P(A \cap (X_0 = j) \cap (X_1 = k))}{P(X_0 = j)}
+      = \sum_k \left[ P(A \,|\, X_0 = j \cap X_1 = k) \cdot \frac{P(X_0 = j \cap X_1 = k)}{P(X_0 = j)} \right]
+      = \sum_k \left[ P(A \,|\, X_1 = k)              \cdot P(X_1 = k \,|\, X_0 = j) \right]
+      = \sum_k \left[ P(A \,|\, X_1 = k)              \cdot P_{jk} \right]
+      = \sum_k q_kP_{ij}
+\end{math} \\[2pt]

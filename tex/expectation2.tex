@@ -1,0 +1,31 @@
+\section{Expectation}
+\subsection{Function of X}
+\begin{math}
+  \expect{h(X)} = \sum_k \left[ k \cdot f_{h(X)}(k) \right]
+                = \sum_k \left[ k \cdot P(h(X) = k) \right]
+                = \sum_k \left[ k \cdot \sum_{x \in \Omega, h(X) = k} \left[ P(X = x) \right] \right]
+                = \sum_{x \in \Omega} \left[ \sum_{k, h(X) = k} \left[ k \cdot P(X = x) \right] \right]
+                = \sum_{x \in \Omega} \left[ h(x) \cdot P(X = x) \right]
+                = \sum_{x \in \Omega} \left[ h(x) \cdot f_x(x) \right]
+\end{math} \\[2pt]
+
+\subsection{Multiplication}
+If \(X, Y\) independent
+\begin{math}
+  \expect{XY} = \sum_{x, y} \left[ xy \cdot f_{XY}(x,y) \right]
+              = \sum_x \left[ \sum_y \left[ xy \cdot f_X(x)f_Y(y) \right] \right]
+              = \sum_x \left[ xf_X(x) \right] \cdot \sum_y \left[ yf_Y(y) \right]
+              = \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+
+\subsection{Addition}
+\begin{math}
+  \expect{X + Y} = \sum_r \left[ r \cdot P(X + Y = r) \right]
+                 = \sum_{j, k} \left[ (x_j + y_k) P(X = x_j,Y = y_k) \right]
+                 = \sum_{j, k} \left[ x_j \cdot P(X = x_j,Y = y_k) \right] +
+                   \sum_{j, k} \left[ y_k \cdot P(X = x_j,Y = y_k) \right]
+                 = \sum_j \left[ x_j \sum_k \left[ P(X = x_j, Y = y_k) \right] \right] +
+                   \sum_k \left[ y_k \sum_j \left[ P(X = x_j, Y = y_k) \right] \right]
+                 = \sum_j \left[ x_j \cdot P(X = x_j) \right] + \sum_k \left[ y_k \cdot P(Y = y_k) \right]
+                 = \expect{X} + \expect{Y}
+\end{math} \\[2pt]

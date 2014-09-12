@@ -1,0 +1,18 @@
+\section{Inequalities}
+\subsection{Markov}
+\begin{math}
+  \expect{X} = \int_0^{\infty} xf(x) \di{x}
+             = \int_0^t xf(x) \di{x} + \int_t^{\infty} xf(x) \di{x} \geq 0 + \int_t^{\infty} tf(x) \di{x}
+             = t\int_t^{\infty} f(x) \di{x}
+             = tP(X \geq t) \Rightarrow \frac{E[X]}{t} \geq P(X \geq t)
+\end{math} \\[2pt]
+
+\subsection{Chebyshev}
+Use Markov's inequality:
+\begin{math}
+  P(|X-\mu| \geq \varepsilon) = P(|X-\mu|^2 \ge \varepsilon^2) \leq \frac{\expect{|X-\mu|}^2}{\varepsilon^2}
+                              = \frac{Var(X)}{\varepsilon^2}
+\end{math} \\[2pt]
+
+\subsection{Law of Large Numbers}
+Use Markov's inequality to prove this theorem.

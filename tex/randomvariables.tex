@@ -1,0 +1,89 @@
+\section{Random Variables}
+\begin{math}
+  f(x) = P(X = x), F(x) = P(X \leq x)
+\end{math}
+\begin{math}
+  \sum_{x \in \Omega}{f(x)} = 1
+\end{math}
+
+\subsection{Expectation}
+\begin{math}
+  \expect{h(X)} = \sum_{all \, x} h(x) f(x)
+\end{math} \\[2pt]
+\begin{math}
+  \expect{a} = a, \expect{aX} = a\expect{X}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X + Y} = \expect{X} + \expect{Y}
+\end{math} \\[2pt]
+
+\subsection{Variance}
+\begin{math}
+  Var(X) = \sum_{all \, x} f(x) (x - \mu)^2
+\end{math} \\[2pt]
+\begin{math}
+  Var(X) = \expect{X^2} - (\expect{X})^2
+\end{math} \\[2pt]
+\begin{math}
+  Var(a) = 0, Var(aX) = a^2 Var(X)
+\end{math} \\[2pt]
+\begin{math}
+  Var(X + Y) = Var(X) + Var(Y) + 2Cov(X, Y)
+\end{math} \\[2pt]
+\begin{math}
+  E \left[ \frac{X - \mu}{\sigma} \right] = 0, Var \left( \frac{X - \mu}{\sigma} \right) = 1
+\end{math}
+
+\subsection{Continuous Random Variables}
+\begin{math}
+  P[X = a] = P[X = b] = 0
+  \Rightarrow
+  P[a \leq X \leq b] = P[a < X < b] ,
+  f(x) = F'(x)
+\end{math} \\[2pt]
+
+\subsection{Multivariate Random Variables}
+\begin{math}
+  f_{XY}(x, y) = P[X = x \text{ and } Y = y]
+\end{math} \\[2pt]
+\begin{math}
+  f_X(x) = \sum_{all \, y}{f_{XY}(x,y)}
+\end{math} \\[2pt]
+\begin{math}
+  f_Y(y) = \sum_{all \, x}{f_{XY}(x,y)}
+\end{math} \\[4pt]
+\begin{math}
+  Cov(X, Y) = \sigma_{XY} = \expect{(X - \expect{X}) \cdot (Y - \expect{Y})} = \expect{XY} - \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, a) = 0, Cov(X, X) = Var(x)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, Y) = Cov(Y, X)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(aX, bY) = abCov(X, Y)
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X + a, Y + b) = Cov(X, Y)
+\end{math} \\[2pt]
+\begin{math}
+  Corr(X, Y) = \varphi_{XY} = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y)}}
+\end{math}
+\begin{math}
+  X = Y \Rightarrow Corr(X, Y) = 1
+\end{math}
+
+\subsection{Independent Random Variables}
+\begin{math}
+  \expect{XY} = \expect{X} \cdot \expect{Y}
+\end{math} \\[2pt]
+\begin{math}
+  Var(X + Y) = Var(X) + Var(Y)
+\end{math} \\[2pt]
+\begin{math}
+  \text{independent } \Rightarrow Cov(X, Y) = 0
+\end{math} \\[2pt]
+\begin{math}
+  Cov(X, Y) = 0 \Leftrightarrow Corr(X, Y) = 0
+\end{math} \\[2pt]

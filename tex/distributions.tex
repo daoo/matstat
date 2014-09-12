@@ -1,0 +1,78 @@
+\section{Distributions}
+\subsection{Geometric Distribution}
+\begin{math}
+  X \sim Geom(p)
+\end{math} \\[2pt]
+\begin{math}
+  f(x) = (1 - p)^{x - 1}p
+\end{math} \\[2pt]
+\begin{math}
+  F(x) = 1 - (1 - p)^{\lfloor x \rfloor}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X} = \frac{1}{p},
+  Var(X) = \frac{1 - p}{p^2}
+\end{math} \\[0pt]
+
+\subsection{Binomial Distribution}
+Fixed number, \(n\), of Bernoulli trials, independent trials with equal probability \(p\).
+\begin{math}
+  X \sim Bin(n, p)
+\end{math} \\[2pt]
+\begin{math}
+  f(x) = \binom{n}{k} p^k (1 - p)^{n - k}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X} = np, Var(X) = np(1 - p)
+\end{math} \\[0pt]
+
+\subsection{Continuous Uniform Distribution}
+\begin{math}
+  X \sim U(a, b)
+\end{math} \\[2pt]
+\begin{math}
+  f(x) = \frac{1}{b - a},
+  F(x) = \frac{x - a}{b - a}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X} = \frac{1}{2}(a + b),
+  Var(X) = \frac{1}{12}(b - a)^2
+\end{math} \\[0pt]
+
+\subsection{Normal Distribution}
+\begin{math}
+  X \sim N(\mu, \sigma^2)
+\end{math} \\[0pt]
+\begin{math}
+  f(x) = \pisigma \cdot exp(-\frac{(x - \mu)^2}{2 \sigma^2})
+\end{math} \\[0pt]
+
+\subsection{Standard Normal Distribution}
+\begin{math}
+  X \sim N(0, 1)
+\end{math} \\[0pt]
+
+\subsection{Poisson Distribution}
+\begin{math}
+  X \sim Poisson(\lambda),
+  f(x) = \frac{e^{-\lambda} \cdot \lambda^x}{x!}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X} = \lambda,
+  \expect{X^2} = \lambda^2 + \lambda,
+  Var(X) = \lambda
+\end{math} \\[0pt]
+
+\subsection{Exponential Distribution}
+\begin{math}
+  X \sim Exp(\lambda)
+\end{math} \\[2pt]
+\begin{math}
+  f(x) = \lambda e^{-\lambda x},
+  F(x) = 1 - e^{-\lambda x}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X} = \frac{1}{\lambda},
+  \expect{X^2} = \frac{2}{\lambda^2},
+  Var(X) = \frac{1}{\lambda^2}
+\end{math} \\[2pt]

@@ -1,0 +1,25 @@
+\section{Variance}
+\subsection{Just X}
+\begin{math}
+  Var(X) = \expect{X - \expect{X}}^2
+         = \expect{X^2 - 2X \expect{X} + \expect{X}^2}
+         = \expect{X^2} - 2 \expect{X} \expect{X} + \expect{\expect{X}^2}
+         = \expect{X^2} - 2 \expect{X}^2 + \expect{X}^2
+         = \expect{X^2} - \expect{X}^2
+\end{math} \\[2pt]
+
+\subsection{Addition}
+\begin{math}
+  Var(X + Y) = \expect{(X + Y)^2} - \expect{X + Y}^2
+             = \expect{X^2 + Y^2 + 2XY} - (\expect{X} + \expect{Y})^2
+             = \expect{X^2} - \expect{X}^2 + \expect{Y} - \expect{Y}^2 + 2 \expect{XY} - 2 \expect{X} \expect{Y}
+             = Var(X) + Var(Y) + 2Cov(X,Y)
+\end{math} \\[2pt]
+
+\subsection{Covariance}
+\begin{math}
+  Cov(X,Y) = \expect{(X - \expect{X})(Y - \expect{Y})}
+           = \expect{XY - X\expect{Y} - Y\expect{X} + \expect{X}\expect{Y}}
+           = \expect{XY} - \expect{X}\expect{Y} - \expect{Y}\expect{X} + \expect{X}\expect{Y}
+           = \expect{XY} - \expect{X}\expect{Y}
+\end{math} \\[2pt]

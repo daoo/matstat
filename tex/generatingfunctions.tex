@@ -1,0 +1,44 @@
+\section{Generating Functions}
+\begin{math}
+  G(a_n; x) = A(x) = \sum_{n = 0}^{\infty} a_n x^n
+\end{math} \\[0pt]
+\begin{math}
+  \left. \frac{\mathrm{d}^nA}{\mathrm{d}x^n} \right|_{x = 0} = a_n \cdot n!
+  \Rightarrow
+  a_n = \frac{A^{(n)}(0)}{n!}
+\end{math} \\[2pt]
+
+\subsection{Common Operations}
+\begin{math}
+  A(x) + B(x) \rightarrow \left\{ a_n + b_n \right\}_{n = 0}^{\infty}
+\end{math} \\[2pt]
+\begin{math}
+  xA(x) + a_{-1} \rightarrow a_{-1}, a_0, a_1, \dotsc
+\end{math} \\[2pt]
+\begin{math}
+  \frac{A(x) - a_0}{x} \rightarrow a_1, a_2, a_3, \dotsc
+\end{math} \\[2pt]
+\begin{math}
+  A'(x) \rightarrow \left\{ n \cdot a_n \right\}_{n = 0}^{\infty}
+\end{math} \\[2pt]
+\begin{math}
+  A(x) \cdot B(x) \rightarrow c_n = a_0b_n + a_1b_{n - 1} + \dotsb + a_{n - 1}b_1 + a_nb_0
+\end{math} \\[2pt]
+
+\subsection{Moment Generating Functions}
+\begin{math}
+  \expect{X^n} \text{ is the } n\text{-th moment}
+\end{math} \\[2pt]
+\begin{math}
+  \expect{X - \expect{X}}^n \text{ is the } n\text{-th central moment}
+\end{math} \\[2pt]
+\begin{math}
+  m_X(t) = \expect{e^{tX}}
+\end{math} \\[2pt]
+\begin{math}
+  m_X^{(n)}(0) = \expect{X^n}
+\end{math} \\[2pt]
+\begin{math}
+  m_X(t) = m_Y(t) \Rightarrow \text{X, Y equally distributed}
+\end{math} \\[2pt]
+Let \(X, Y\) be independent with m.g.f. \(m_X(t), m_Y(t)\) then \(Z = X + Y\) has m.g.f. \(m_Z(t) = m_X(t) \cdot m_Y(t)\)
